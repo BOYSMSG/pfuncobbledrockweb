@@ -92,33 +92,8 @@ export default function SiteHeader() {
             </a>
           </div>
 
-          {/* Quick Connect, Player Count & Sign In / User Profile */}
+          {/* Sign In / User Profile Dropdown */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
-            <button
-              onClick={copyIp}
-              className="header-server-ip-btn"
-              style={{
-                background: "#F0FDF4",
-                border: "1.5px solid rgba(16, 185, 129, 0.4)",
-                padding: "6px 14px",
-                borderRadius: "9999px",
-                fontSize: "0.78rem",
-                fontWeight: 800,
-                color: "#064E3B",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                transition: "all 0.2s ease",
-                whiteSpace: "nowrap"
-              }}
-              title="Click to copy IP: mcpe.pokefun.in:19132"
-            >
-              <span className="gateway-live-dot"></span>
-              <span>{ipCopied ? "Copied IP!" : `mcpe.pokefun.in \u2022 ${playerCount}`}</span>
-              <i className={`fa-solid ${ipCopied ? "fa-check" : "fa-copy"}`} style={{ color: "#10B981" }}></i>
-            </button>
-
             {/* User Account / Sign In Button */}
             {session ? (
               <div style={{ position: "relative" }}>
@@ -245,6 +220,35 @@ export default function SiteHeader() {
             )}
           </div>
         </nav>
+
+        {/* Server IP Quick-Connect Bar below navbar */}
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "5px 0 6px", background: "rgba(16, 185, 129, 0.05)", borderTop: "1px solid rgba(16, 185, 129, 0.1)" }}>
+          <button
+            onClick={copyIp}
+            className="header-server-ip-btn"
+            style={{
+              background: "#F0FDF4",
+              border: "1.5px solid rgba(16, 185, 129, 0.4)",
+              padding: "4px 16px",
+              borderRadius: "9999px",
+              fontSize: "0.8rem",
+              fontWeight: 800,
+              color: "#064E3B",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              transition: "all 0.2s ease",
+              whiteSpace: "nowrap",
+              boxShadow: "0 2px 6px rgba(16, 185, 129, 0.08)"
+            }}
+            title="Click to copy IP: mcpe.pokefun.in:19132"
+          >
+            <span className="gateway-live-dot"></span>
+            <span>{ipCopied ? "Copied IP to Clipboard!" : `Bedrock IP: mcpe.pokefun.in | Port: 19132 \u2022 ${playerCount} Players Online`}</span>
+            <i className={`fa-solid ${ipCopied ? "fa-check" : "fa-copy"}`} style={{ color: "#10B981" }}></i>
+          </button>
+        </div>
       </header>
     </>
   );
