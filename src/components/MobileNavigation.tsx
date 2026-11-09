@@ -59,6 +59,13 @@ export default function MobileNavigation() {
       name: "Main Menu",
       links: [
         { title: "Home", path: "/", icon: "fa-solid fa-house" },
+        ...(session ? [
+          { title: "Direct Messages", path: "/messages", icon: "fa-solid fa-message", highlight: true },
+          { title: "My Profile", path: "/profile", icon: "fa-solid fa-user" },
+          ...(['OWNER', 'ADMIN'].includes((session.user as any)?.role) ? [
+            { title: "Admin Panel", path: "/admin", icon: "fa-solid fa-shield-halved" }
+          ] : [])
+        ] : []),
         { title: "Features", path: "/features", icon: "fa-solid fa-sparkles" },
         { title: "Store & Ranks", path: "https://store.pokefun.in", icon: "fa-solid fa-cart-shopping", highlight: true, external: true },
         { title: "Showcase & Videos", path: "/showcase", icon: "fa-solid fa-star", highlight: true },
@@ -112,6 +119,12 @@ export default function MobileNavigation() {
             ) : (
               <a
                 href="/login"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('openLoginModal'));
+                  }
+                }}
                 style={{
                   background: "#F0FDF4",
                   border: "1.5px solid rgba(16, 185, 129, 0.4)",

@@ -80,7 +80,15 @@ export default function SiteHeader() {
             </a>
             <a href="/showcase" className={`nav-link-item ${isActive('/showcase') ? 'active' : ''}`}>Showcase</a>
             <a href="/wiki" className={`nav-link-item ${isActive('/wiki') ? 'active' : ''}`}>Wiki &amp; FAQ</a>
-            <a href="/login" className={`nav-link-item ${isActive('/login') ? 'active' : ''}`}>Login</a>
+            {session ? (
+              <>
+                <a href="/messages" className={`nav-link-item ${isActive('/messages') ? 'active' : ''}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <i className="fa-solid fa-message" style={{ color: '#10B981' }}></i>
+                  <span>Messages</span>
+                </a>
+                <a href="/profile" className={`nav-link-item ${isActive('/profile') ? 'active' : ''}`}>Profile</a>
+              </>
+            ) : null}
             <a href="https://discord.gg/NtE8QBkmwR" target="_blank" rel="noopener noreferrer" className="nav-link-item" style={{ color: "#5865F2", display: "flex", alignItems: "center", gap: "6px" }}>
               <i className="fa-brands fa-discord"></i>
               <span>Discord</span>
@@ -169,6 +177,13 @@ export default function SiteHeader() {
                       <i className="fa-solid fa-user" style={{ color: "#10B981" }}></i>
                       My Profile
                     </a>
+                    <a 
+                      href="/messages" 
+                      style={{ padding: "8px 12px", borderRadius: "8px", color: "#134E4A", fontWeight: 700, fontSize: "0.85rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}
+                    >
+                      <i className="fa-solid fa-message" style={{ color: "#10B981" }}></i>
+                      Direct Messages
+                    </a>
                     {['OWNER', 'ADMIN'].includes((session.user as any)?.role) && (
                       <a 
                         href="/admin" 
@@ -204,6 +219,12 @@ export default function SiteHeader() {
             ) : (
               <a
                 href="/login"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('openLoginModal'));
+                  }
+                }}
                 style={{
                   background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
                   color: "#FFFFFF",
