@@ -12,7 +12,7 @@ import PushManager from '@/components/PushManager';
 import WelcomeLoginModal from '@/components/WelcomeLoginModal';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cobbledrock.pokefun.in'),
+  metadataBase: new URL('https://cobblefun.pokefun.in'),
   title: 'CobbleFun | Cobblemon Bedrock & MCPE Server | Powered by Pokefun',
   description: 'Join CobbleFun, powered by Pokefun - the premier Minecraft Bedrock / MCPE Cobblemon Server! Catch, train, and battle on Mobile, Windows & Consoles.',
   keywords: [
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CobbleFun | Cobblemon Bedrock & MCPE Server | Powered by Pokefun',
     description: 'Join CobbleFun, the #1 Cobblemon Bedrock & MCPE Minecraft server! Catch, train, and battle across all devices.',
-    url: 'https://cobbledrock.pokefun.in',
+    url: 'https://cobblefun.pokefun.in',
     siteName: 'CobbleFun',
     images: [
       {
-        url: 'https://cobbledrock.pokefun.in/images/cobblefun_logo.png',
+        url: 'https://cobblefun.pokefun.in/images/cobblefun_logo.png',
         width: 1200,
         height: 630,
         alt: 'CobbleFun Cobblemon Bedrock Server',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'CobbleFun | Cobblemon Bedrock & MCPE Server | Powered by Pokefun',
     description: 'Join CobbleFun - premier Minecraft Bedrock & MCPE Cobblemon experience powered by Pokefun.',
-    images: ['https://cobbledrock.pokefun.in/images/cobblefun_logo.png'],
+    images: ['https://cobblefun.pokefun.in/images/cobblefun_logo.png'],
   },
 };
 
