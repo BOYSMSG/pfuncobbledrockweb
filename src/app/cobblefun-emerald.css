@@ -172,6 +172,33 @@ html, body, .viewport {
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
 }
 
+@media (max-width: 1300px) {
+  .desktop-nav-container {
+    padding: 10px 16px !important;
+    gap: 12px !important;
+  }
+  .nav-links-center {
+    gap: 4px !important;
+  }
+  .nav-link-item {
+    padding: 6px 10px !important;
+    font-size: 0.85rem !important;
+  }
+  .nav-store-pill {
+    padding: 6px 12px !important;
+    font-size: 0.82rem !important;
+  }
+  .nav-brand-text {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 1140px) {
+  .header-server-ip-btn {
+    display: none !important;
+  }
+}
+
 /* ==========================================================================
    MOBILE TOP BAR & DRAWER
    ========================================================================= */

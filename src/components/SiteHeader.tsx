@@ -81,13 +81,10 @@ export default function SiteHeader() {
             <a href="/showcase" className={`nav-link-item ${isActive('/showcase') ? 'active' : ''}`}>Showcase</a>
             <a href="/wiki" className={`nav-link-item ${isActive('/wiki') ? 'active' : ''}`}>Wiki &amp; FAQ</a>
             {session ? (
-              <>
-                <a href="/messages" className={`nav-link-item ${isActive('/messages') ? 'active' : ''}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  <i className="fa-solid fa-message" style={{ color: '#10B981' }}></i>
-                  <span>Messages</span>
-                </a>
-                <a href="/profile" className={`nav-link-item ${isActive('/profile') ? 'active' : ''}`}>Profile</a>
-              </>
+              <a href="/messages" className={`nav-link-item ${isActive('/messages') ? 'active' : ''}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <i className="fa-solid fa-message" style={{ color: '#10B981' }}></i>
+                <span>Messages</span>
+              </a>
             ) : null}
             <a href="https://discord.gg/NtE8QBkmwR" target="_blank" rel="noopener noreferrer" className="nav-link-item" style={{ color: "#5865F2", display: "flex", alignItems: "center", gap: "6px" }}>
               <i className="fa-brands fa-discord"></i>
@@ -96,22 +93,24 @@ export default function SiteHeader() {
           </div>
 
           {/* Quick Connect, Player Count & Sign In / User Profile */}
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
             <button
               onClick={copyIp}
+              className="header-server-ip-btn"
               style={{
                 background: "#F0FDF4",
                 border: "1.5px solid rgba(16, 185, 129, 0.4)",
-                padding: "8px 16px",
+                padding: "6px 14px",
                 borderRadius: "9999px",
-                fontSize: "0.82rem",
+                fontSize: "0.78rem",
                 fontWeight: 800,
                 color: "#064E3B",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
-                transition: "all 0.2s ease"
+                transition: "all 0.2s ease",
+                whiteSpace: "nowrap"
               }}
               title="Click to copy IP: mcpe.pokefun.in:19132"
             >
