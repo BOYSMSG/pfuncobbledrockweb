@@ -231,7 +231,7 @@ export default function RootLayout({
             </footer>
 
             <WelcomeLoginModal />
-            <AIChatWidget />
+            {/* <AIChatWidget /> */}
             <PushManager />
           </div>
         </Providers>
