@@ -130,7 +130,7 @@ export default function ProtectionStonesWiki() {
                 <i className="fa-solid fa-gem" style={{ color: '#059669' }}></i> 🛡️ Protection Stones Tiers &amp; Pricing
               </h2>
               <p style={{ color: '#475569', marginBottom: '20px', fontSize: '15px' }}>
-                Protection stones in-game PokéCoins se buy kiye ja sakte hain via <code>/claim</code> ya <code>/protection</code>:
+                Protection stones can be purchased with in-game PokéCoins via <code>/claim</code> or <code>/protection</code>:
               </p>
 
               <div style={{ overflowX: 'auto' }}>
@@ -154,7 +154,7 @@ export default function ProtectionStonesWiki() {
                       <td style={{ padding: '12px 16px', fontWeight: 800, color: '#059669' }}>250,000 (250k)</td>
                       <td style={{ padding: '12px 16px', fontWeight: 700 }}>33 × 33 blocks</td>
                       <td style={{ padding: '12px 16px', color: '#0284C7', fontWeight: 700 }}>16 Blocks</td>
-                      <td style={{ padding: '12px 16px' }}><code>/claim ya /protection</code></td>
+                      <td style={{ padding: '12px 16px' }}><code>/claim or /protection</code></td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid rgba(16, 185, 129, 0.12)' }}>
                       <td style={{ padding: '12px 16px', fontWeight: 800, color: '#06281E' }}>
@@ -164,7 +164,7 @@ export default function ProtectionStonesWiki() {
                       <td style={{ padding: '12px 16px', fontWeight: 800, color: '#059669' }}>750,000 (750k)</td>
                       <td style={{ padding: '12px 16px', fontWeight: 700 }}>65 × 65 blocks</td>
                       <td style={{ padding: '12px 16px', color: '#0284C7', fontWeight: 700 }}>32 Blocks</td>
-                      <td style={{ padding: '12px 16px' }}><code>/claim ya /protection</code></td>
+                      <td style={{ padding: '12px 16px' }}><code>/claim or /protection</code></td>
                     </tr>
                   </tbody>
                 </table>

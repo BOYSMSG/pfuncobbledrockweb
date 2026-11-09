@@ -202,7 +202,7 @@ export default function WelcomeLoginModal() {
               maxWidth: "340px",
             }}
           >
-            Apna trainer profile access karein, community doston se juden, aur in-game rewards &amp; kits claim karein!
+            Access your trainer profile, connect with the community, and claim in-game rewards &amp; kits!
           </p>
         </div>
 

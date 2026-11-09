@@ -220,7 +220,7 @@ export default function KitsWikiPage() {
             ⭐ Ranks Perks, Limits &amp; Commands Guide
           </h4>
           <p style={{ margin: 0, fontSize: "0.9rem", color: "#ECFDF5" }}>
-            Sabhi 9 ranks ke homes, public warps, /fly permissions, cooldowns aur vaults ka live comparison dekhein!
+            Explore the full comparison of all 9 ranks: homes, public warps, /fly permissions, cooldowns, and portable vaults!
           </p>
         </div>
         <Link

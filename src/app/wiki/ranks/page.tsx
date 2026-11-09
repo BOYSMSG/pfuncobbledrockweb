@@ -161,7 +161,7 @@ const STONES_DATA = [
     coins: "250,000 (250k)",
     area: "33 × 33 blocks",
     radius: "16 Blocks",
-    command: "/claim ya /protection",
+    command: "/claim or /protection",
     color: "#10B981",
     tag: "STARTER BASE",
   },
@@ -171,29 +171,29 @@ const STONES_DATA = [
     coins: "750,000 (750k)",
     area: "65 × 65 blocks",
     radius: "32 Blocks",
-    command: "/claim ya /protection",
+    command: "/claim or /protection",
     color: "#059669",
     tag: "CLAN HEADQUARTERS",
   },
 ];
 
 const COMMANDS_DATA = [
-  { command: "/perks", cat: "core", desc: "Master GUI menu — rank, cooldowns aur saare perks ek jagah dekhein", ex: "/perks" },
-  { command: "/pc", cat: "core", desc: "Direct Cobblemon PC Box storage open karega (Pokemon team manage)", ex: "/pc" },
-  { command: "/pv [1-6]", cat: "core", desc: "Personal portable vault (items store & withdraw securely)", ex: "/pv 1" },
-  { command: "/pokeheal", cat: "rec", desc: "Poori party ke Pokémon ko full heal + revive karega", ex: "/pokeheal" },
-  { command: "/heal", cat: "rec", desc: "Player ki health aur saturation full karega", ex: "/heal" },
-  { command: "/feed", cat: "rec", desc: "Player ka hunger bar full karega", ex: "/feed" },
-  { command: "/fly", cat: "core", desc: "Fly toggle on/off (Master rank ya uske upar ke liye unlocked)", ex: "/fly", req: "Master+ Rank" },
-  { command: "/sethome <name>", cat: "tp", desc: "Apni current location ko home banayega", ex: "/sethome base" },
-  { command: "/home [name]", cat: "tp", desc: "Home pe teleport karega (bina name ke homes ka GUI kholega)", ex: "/home base" },
-  { command: "/homes", cat: "tp", desc: "Saare set kiye hue homes ka visual menu kholega", ex: "/homes" },
-  { command: "/delhome <name>", cat: "tp", desc: "Home delete karega", ex: "/delhome base" },
-  { command: "/pw ya /pwarps", cat: "warp", desc: "Public Warps Directory GUI kholega (Browse, Visit & TP to player shops)", ex: "/pw" },
-  { command: "/pwarp set <name>", cat: "warp", desc: "Naya public warp banayega (Inventory se icon select hoga)", ex: "/pwarp set shop" },
-  { command: "/pwarp update <name>", cat: "warp", desc: "Existing warp ki location apni jagah pe update karega", ex: "/pwarp update shop" },
-  { command: "/pwarp del <name>", cat: "warp", desc: "Apna public warp delete karega", ex: "/pwarp del shop" },
-  { command: "/claim", cat: "claim", desc: "Protection stone buy shop & claims management menu", ex: "/claim" },
+  { command: "/perks", cat: "core", desc: "Master GUI menu — view rank limits, cooldowns, and all perks in one place", ex: "/perks" },
+  { command: "/pc", cat: "core", desc: "Direct Cobblemon PC Box storage access anywhere", ex: "/pc" },
+  { command: "/pv [1-6]", cat: "core", desc: "Personal portable vault (securely store and withdraw items anywhere)", ex: "/pv 1" },
+  { command: "/pokeheal", cat: "rec", desc: "Instantly restore full health and revive your entire Pokémon party", ex: "/pokeheal" },
+  { command: "/heal", cat: "rec", desc: "Restore full player health and saturation", ex: "/heal" },
+  { command: "/feed", cat: "rec", desc: "Instantly replenish player hunger bar", ex: "/feed" },
+  { command: "/fly", cat: "core", desc: "Toggle flying on/off (unlocked at Master rank and above)", ex: "/fly", req: "Master+ Rank" },
+  { command: "/sethome <name>", cat: "tp", desc: "Set your current coordinates as a named home waypoint", ex: "/sethome base" },
+  { command: "/home [name]", cat: "tp", desc: "Teleport to a saved home (opens visual GUI if name is omitted)", ex: "/home base" },
+  { command: "/homes", cat: "tp", desc: "Open interactive visual menu of all your saved homes", ex: "/homes" },
+  { command: "/delhome <name>", cat: "tp", desc: "Delete an existing saved home waypoint", ex: "/delhome base" },
+  { command: "/pw or /pwarps", cat: "warp", desc: "Open Public Warps Directory GUI (browse, visit & teleport to player shops)", ex: "/pw" },
+  { command: "/pwarp set <name>", cat: "warp", desc: "Create a new public warp (choose icon from your inventory)", ex: "/pwarp set shop" },
+  { command: "/pwarp update <name>", cat: "warp", desc: "Update an existing public warp location to your current position", ex: "/pwarp update shop" },
+  { command: "/pwarp del <name>", cat: "warp", desc: "Delete your own public warp", ex: "/pwarp del shop" },
+  { command: "/claim", cat: "claim", desc: "Open protection stone shop and land claim management menu", ex: "/claim" },
 ];
 
 export default function RanksWikiPage() {
@@ -286,8 +286,8 @@ export default function RanksWikiPage() {
           margin: "0 auto 26px auto",
           lineHeight: 1.6
         }}>
-          CobbleFun Bedrock ke sabhi player ranks ka poora comparison chart dekhein: Homes, Public Warps, 
-          Fly permissions, Pokeheal cooldowns, portable vaults, land protection stones aur command cheatsheet ek hi jagah!
+          Explore the full comparison chart of all CobbleFun Bedrock player ranks: Homes, Public Warps, 
+          Fly permissions, Pokeheal cooldowns, portable vaults, land protection stones, and command cheatsheet all in one place!
         </p>
 
         {/* Tab Switcher */}
@@ -396,7 +396,7 @@ export default function RanksWikiPage() {
                 📊 Ranks Perks &amp; Limits Matrix
               </h3>
               <p style={{ margin: 0, color: "#475569", fontSize: "0.92rem" }}>
-                Default Trainer se lekar VIP tak sabhi limits, cooldowns aur portable vaults:
+                Complete matrix of limits, cooldowns, and portable vaults from default Trainer up to VIP:
               </p>
             </div>
 
@@ -418,7 +418,7 @@ export default function RanksWikiPage() {
                 boxShadow: "0 4px 14px rgba(16, 185, 129, 0.35)"
               }}
             >
-              <i className="fa-solid fa-cart-shopping"></i> CobbleFun Store me Ranks Dekhein &rarr;
+              <i className="fa-solid fa-cart-shopping"></i> View Ranks on CobbleFun Store &rarr;
             </a>
           </div>
 
@@ -555,10 +555,10 @@ export default function RanksWikiPage() {
         <div>
           <div style={{ textAlign: "center", marginBottom: "28px" }}>
             <h3 style={{ fontSize: "1.8rem", fontWeight: 900, color: "#064E3B", margin: "0 0 8px 0" }}>
-              💡 Kaun sa Rank Aapke Liye Best Hai? (Buyer's Guide)
+              💡 Which Rank Should You Choose? (Buyer's Guide)
             </h3>
             <p style={{ color: "#134E4A", fontSize: "0.98rem", maxWidth: "680px", margin: "0 auto" }}>
-              Har player ke playstyle ke hisab se hamari curated recommendations:
+              Curated recommendations tailored for every player's playstyle:
             </p>
           </div>
 
@@ -568,13 +568,13 @@ export default function RanksWikiPage() {
               <span style={{ background: "#ECFDF5", color: "#059669", padding: "4px 10px", borderRadius: "6px", fontWeight: 800, fontSize: "0.75rem", display: "inline-block", marginBottom: "12px" }}>
                 🥉 STARTER &amp; BUDGET
               </span>
-              <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>Beginner ya Great</h4>
+              <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>Beginner or Great</h4>
               <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, margin: "0 0 16px 0" }}>
-                Pocket friendly price me 3-4 Homes, 3-4 Public Warps aur fast 6 min heal cooldown. New players ke survival ke liye best!
+                Pocket-friendly entry tiers with 3–4 Homes, 3–4 Public Warps, and a fast 6-minute heal cooldown. Ideal for new players starting their survival journey!
               </p>
               <div style={{ color: "#047857", fontWeight: 700, fontSize: "0.85rem" }}>
                 ✓ +2 Extra Homes &amp; Warps<br />
-                ✓ Cooldown 40% Kam<br />
+                ✓ Cooldowns 40% Faster<br />
                 ✓ Vault #1-2 Storage
               </div>
             </div>
@@ -586,12 +586,12 @@ export default function RanksWikiPage() {
               </span>
               <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>Master Rank</h4>
               <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, margin: "0 0 16px 0" }}>
-                <strong>Community ka #1 Most Popular Rank!</strong> Yahan se `/fly` command permanently unlock ho jaati hai + 8 Homes &amp; 3 Vaults!
+                <strong>The community's #1 most popular rank!</strong> Permanently unlocks the `/fly` command + 8 Homes and 3 Vaults!
               </p>
               <div style={{ color: "#7C3AED", fontWeight: 700, fontSize: "0.85rem" }}>
                 ✓ 🪽 <strong>Fly (/fly) Unlocked!</strong><br />
                 ✓ 8 Homes &amp; 8 Public Warps<br />
-                ✓ /pc Cooldown sirf 10s<br />
+                ✓ /pc Cooldown only 10s<br />
                 ✓ 3 Full Vaults
               </div>
             </div>
@@ -601,9 +601,9 @@ export default function RanksWikiPage() {
               <span style={{ background: "#CFFAFE", color: "#0891B2", padding: "4px 10px", borderRadius: "6px", fontWeight: 800, fontSize: "0.75rem", display: "inline-block", marginBottom: "12px" }}>
                 ⚡ PRO GRINDER PICK
               </span>
-              <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>Elite ya Ace</h4>
+              <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>Elite or Ace</h4>
               <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, margin: "0 0 16px 0" }}>
-                Pokémon hunters aur traders ke liye game-changer perk: <strong>⚡ Instant (0s) /pc cooldown!</strong> Bina wait ke Pokémon swap karein.
+                The game-changing tier for Pokémon hunters and traders: <strong>⚡ Instant (0s) /pc cooldown!</strong> Swap and manage your Pokémon box anywhere with zero wait time.
               </p>
               <div style={{ color: "#0891B2", fontWeight: 700, fontSize: "0.85rem" }}>
                 ✓ ⚡ <strong>0s Instant /pc Box!</strong><br />
@@ -620,11 +620,11 @@ export default function RanksWikiPage() {
               </span>
               <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", margin: "0 0 10px 0" }}>VIP Rank</h4>
               <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, margin: "0 0 16px 0" }}>
-                Maximum power, server pe sabse uncha rutba! 30 Homes, 30 Warps, 6 Vaults, aur super-fast 45s Pokeheal!
+                Maximum power and ultimate server prestige! Enjoy 30 Homes, 30 Warps, 6 Vaults, and ultra-fast 45s Pokeheal!
               </p>
               <div style={{ color: "#B45309", fontWeight: 700, fontSize: "0.85rem" }}>
                 ✓ 👑 <strong>30 Homes &amp; 30 Warps!</strong><br />
-                ✓ Sabhi 6 Vaults Unlocked<br />
+                ✓ All 6 Vaults Unlocked<br />
                 ✓ 45s Heal &amp; 15s Feed<br />
                 ✓ Instant /pc &amp; /fly
               </div>
@@ -648,7 +648,7 @@ export default function RanksWikiPage() {
               🛡️ 2. Land Protection Stones Table
             </h3>
             <p style={{ color: "#134E4A", fontSize: "0.95rem", margin: "0 0 20px 0" }}>
-              Apne base aur items ko safe rakhein! Protection stones in-game PokéCoins se ya webstore se buy kiye ja sakte hain:
+              Protect your base and items! Protection stones can be purchased with in-game PokéCoins or via the webstore:
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
@@ -721,7 +721,7 @@ export default function RanksWikiPage() {
           }}>
             <i className="fa-solid fa-circle-info" style={{ color: "#059669", fontSize: "1.8rem" }}></i>
             <div style={{ color: "#064E3B", fontSize: "0.92rem", lineHeight: 1.6 }}>
-              <strong>Kaise Use Karein:</strong> Protection stone ko zameen par place karte hi specified radius ka land claim automatically create ho jata hai. Kisi dost ko permission dene ke liye <code>/ps add &lt;player&gt;</code> use karein!
+              <strong>How to Use:</strong> Placing a protection stone automatically creates a protected zone covering the specified radius. Use <code>/ps add &lt;player&gt;</code> to grant building and chest permissions to friends!
             </div>
           </div>
         </div>
@@ -742,7 +742,7 @@ export default function RanksWikiPage() {
                 🎮 3. CobbleFun Commands Cheatsheet
               </h3>
               <p style={{ color: "#475569", fontSize: "0.92rem", margin: 0 }}>
-                Sabhi zaroori in-game commands. Kisi bhi command par click karke copy karein:
+                All essential in-game commands. Click any example to copy to clipboard:
               </p>
             </div>
 

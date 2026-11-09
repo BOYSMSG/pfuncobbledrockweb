@@ -149,6 +149,56 @@ const newFeatures = [
       image: "/images/features/epicbuidls.png"
     },
     {
+      title: "Natural Wild Boss Battles",
+      desc: "Encounter legendary and empowered wild Boss Pokémon spawning dynamically throughout the wilderness. Defeat them in challenging tactical battles to claim rare treasures, EV items, and crate keys!",
+      image: "/images/features/image09_bosspokemons1.png"
+    },
+    {
+      title: "Custom Team Raids",
+      desc: "Rally your friends in our custom multiplayer Bedrock Raid Dens! Strategize against high-tier raid bosses with exclusive movesets and earn legendary rewards together.",
+      image: "/images/features/image27_Team_Raids_Battle.png"
+    },
+    {
+      title: "Mega Evolutions & Z-Moves",
+      desc: "Unleash ultimate power! Equip custom Mega Stones and Z-Crystals to trigger real-time Mega Evolutions and screen-shattering Z-Moves during gym battles and competitive tournaments.",
+      image: "/images/features/image29_Z_Mega1s.png"
+    },
+    {
+      title: "DNA Pokémon Fusions",
+      desc: "Fuse your favorite Pokémon through the server's advanced DNA splicing laboratory to create fearsome, one-of-a-kind hybrid battlers with merged typing and unique stats.",
+      image: "/images/features/fusion_pokemons1.png"
+    },
+    {
+      title: "Battle Tower & Ranked Arenas",
+      desc: "Put your competitive team to the test! Ascend through challenging floors in the endless Battle Tower or queue into Ranked Battles to claim leaderboards status and BP rewards.",
+      image: "/images/features/battletower.png"
+    },
+    {
+      title: "Custom Fakemons & Regional Forms",
+      desc: "Discover hundreds of handcrafted custom Fakemons and server-exclusive regional forms, complete with bespoke 3D models, animated textures, and custom learnsets.",
+      image: "/images/features/coolfakemons.png"
+    },
+    {
+      title: "Multi-Floor RPG Dungeons",
+      desc: "Explore perilous custom dungeons filled with puzzles, elite mob guardians, and treasure vaults hidden across the darkest biomes of the server.",
+      image: "/images/features/dungeon.png"
+    },
+    {
+      title: "Safari Zone Expeditions",
+      desc: "Enter the dedicated Safari Zone reserve to track rare shiny spawns, hidden ability specimens, and high-IV Pokémon with special safari capture balls.",
+      image: "/images/features/safarizone.png"
+    },
+    {
+      title: "Flying Taxi Fast Travel",
+      desc: "Whistle for the Corviknight Flying Taxi from anywhere in the world for rapid, atmospheric transit between major cities, gym hubs, and custom points of interest.",
+      image: "/images/features/Flying_Taxi-Photoroom.png"
+    },
+    {
+      title: "Distortion World Dimension",
+      desc: "Step through the dimensional rift into the mysterious Distortion World! Experience altered gravity, floating islands, and rare Giratina encounters.",
+      image: "/images/features/DISTORTION_WORLD1.png"
+    },
+    {
       title: "More Coming Soon!",
       desc: "Many other features coming soon and under development: Raids, Dungeons, NPCs, Level Cap, and many more coming soon!",
       image: ""

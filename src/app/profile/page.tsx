@@ -187,9 +187,20 @@ export default function ProfilePage() {
               </span>
             </div>
 
-            <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0 0 12px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0 0 10px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <i className="fa-solid fa-fingerprint" style={{ color: '#06b6d4' }}></i> {profile.username ? `@${profile.username}` : profile.email}
             </p>
+
+            {/* Verified Account Email Badge */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(6, 182, 212, 0.1)', border: '1px solid rgba(6, 182, 212, 0.3)', padding: '5px 14px', borderRadius: '12px', marginBottom: '14px' }}>
+              <i className="fa-solid fa-envelope" style={{ color: '#06b6d4', fontSize: '0.85rem' }}></i>
+              <span style={{ fontSize: '0.88rem', color: '#e2e8f0', fontWeight: 700 }}>
+                {profile.email}
+              </span>
+              <span style={{ fontSize: '0.7rem', background: '#10b981', color: '#ffffff', padding: '1px 7px', borderRadius: '6px', fontWeight: 800 }}>
+                ✓ Verified Login
+              </span>
+            </div>
 
             <p style={{ color: '#cbd5e1', margin: '0 0 20px 0', lineHeight: 1.6, maxWidth: '620px', fontSize: '1rem' }}>
               {profile.bio || "Exploring the Cobblemon wild and battling gym leaders on Pokéfun SMP!"}
@@ -433,17 +444,17 @@ export default function ProfilePage() {
               
               <div style={{ marginBottom: '16px' }}>
                 <label style={{ display: 'block', color: '#94a3b8', marginBottom: '6px', fontSize: '0.85rem', fontWeight: 600 }}>Display Name</label>
-                <input value={editName} onChange={e => setEditName(e.target.value)} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', outline: 'none' }} />
+                <input value={editName} onChange={e => setEditName(e.target.value)} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', outline: 'none' }} />
               </div>
 
               <div style={{ marginBottom: '16px' }}>
                 <label style={{ display: 'block', color: '#94a3b8', marginBottom: '6px', fontSize: '0.85rem', fontWeight: 600 }}>Pokefun Web ID (@username)</label>
-                <input value={editUsername} onChange={e => setEditUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ''))} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', outline: 'none' }} placeholder="lowercase, numbers, and underscore only" />
+                <input value={editUsername} onChange={e => setEditUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ''))} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', outline: 'none' }} placeholder="lowercase, numbers, and underscore only" />
               </div>
 
               <div style={{ marginBottom: '16px' }}>
                 <label style={{ display: 'block', color: '#94a3b8', marginBottom: '6px', fontSize: '0.85rem', fontWeight: 600 }}>Bio</label>
-                <textarea value={editBio} onChange={e => setEditBio(e.target.value)} rows={3} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', outline: 'none' }} />
+                <textarea value={editBio} onChange={e => setEditBio(e.target.value)} rows={3} style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', outline: 'none' }} />
               </div>
 
               <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)', margin: '20px 0' }} />
@@ -451,26 +462,64 @@ export default function ProfilePage() {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '24px' }}>
                 <div>
-                  <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}><i className="fa-solid fa-cube" style={{ color: '#10b981' }}></i> Minecraft IGN</label>
-                  <input value={editConnections.minecraft} onChange={e => setEditConnections({...editConnections, minecraft: e.target.value})} placeholder="In-game name" style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', fontSize: '0.88rem' }} />
+                  <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}>
+                    <i className="fa-brands fa-google" style={{ color: '#ea4335', marginRight: '6px' }}></i> Google / Gmail
+                  </label>
+                  {profile.email ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <input 
+                        value={profile.email} 
+                        disabled 
+                        title="Primary verified Google / Email account" 
+                        style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(234, 67, 53, 0.3)', background: 'rgba(234, 67, 53, 0.08)', color: '#fca5a5', fontSize: '0.85rem', cursor: 'not-allowed' }} 
+                      />
+                      <span style={{ fontSize: '0.72rem', color: '#10b981', fontWeight: 700 }}>✓ Verified Email</span>
+                    </div>
+                  ) : (
+                    <button 
+                      type="button" 
+                      onClick={() => signIn('google')} 
+                      style={{ width: '100%', padding: '10px', borderRadius: '8px', border: 'none', background: '#ea4335', color: '#ffffff', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}
+                    >
+                      <i className="fa-brands fa-google"></i> Link Google
+                    </button>
+                  )}
                 </div>
                 <div>
-                  <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}><i className="fa-brands fa-discord" style={{ color: '#5865F2' }}></i> Discord</label>
+                  <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}>
+                    <i className="fa-brands fa-discord" style={{ color: '#5865F2', marginRight: '6px' }}></i> Discord
+                  </label>
                   {editConnections.discord ? (
-                    <input value={editConnections.discord} disabled title="Discord is automatically linked" style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.03)', color: '#64748b', fontSize: '0.88rem', cursor: 'not-allowed' }} />
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <input 
+                        value={editConnections.discord} 
+                        disabled 
+                        title="Discord is automatically linked" 
+                        style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(88, 101, 242, 0.3)', background: 'rgba(88, 101, 242, 0.08)', color: '#a5b4fc', fontSize: '0.85rem', cursor: 'not-allowed' }} 
+                      />
+                      <span style={{ fontSize: '0.72rem', color: '#10b981', fontWeight: 700 }}>✓ Discord Linked</span>
+                    </div>
                   ) : (
-                    <button onClick={() => signIn('discord')} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: 'none', background: '#5865F2', color: '#ffffff', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
+                    <button 
+                      type="button" 
+                      onClick={() => signIn('discord')} 
+                      style={{ width: '100%', padding: '10px', borderRadius: '8px', border: 'none', background: '#5865F2', color: '#ffffff', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}
+                    >
                       <i className="fa-brands fa-discord"></i> Link Discord
                     </button>
                   )}
                 </div>
                 <div>
+                  <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}><i className="fa-solid fa-cube" style={{ color: '#10b981' }}></i> Minecraft IGN</label>
+                  <input value={editConnections.minecraft} onChange={e => setEditConnections({...editConnections, minecraft: e.target.value})} placeholder="In-game name" style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', fontSize: '0.88rem' }} />
+                </div>
+                <div>
                   <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}><i className="fa-brands fa-youtube" style={{ color: '#ef4444' }}></i> YouTube</label>
-                  <input value={editConnections.youtube} onChange={e => setEditConnections({...editConnections, youtube: e.target.value})} placeholder="Channel name" style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', fontSize: '0.88rem' }} />
+                  <input value={editConnections.youtube} onChange={e => setEditConnections({...editConnections, youtube: e.target.value})} placeholder="Channel name" style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', fontSize: '0.88rem' }} />
                 </div>
                 <div>
                   <label style={{ display: 'block', color: '#94a3b8', marginBottom: '5px', fontSize: '0.82rem' }}><i className="fa-brands fa-instagram" style={{ color: '#ec4899' }}></i> Instagram</label>
-                  <input value={editConnections.instagram} onChange={e => setEditConnections({...editConnections, instagram: e.target.value})} placeholder="@username" style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', fontSize: '0.88rem' }} />
+                  <input value={editConnections.instagram} onChange={e => setEditConnections({...editConnections, instagram: e.target.value})} placeholder="@username" style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#172236', color: '#ffffff', border: '1.5px solid #334155', colorScheme: 'dark', fontSize: '0.88rem' }} />
                 </div>
               </div>
 

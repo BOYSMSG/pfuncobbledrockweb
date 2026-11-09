@@ -165,11 +165,24 @@ export default function MessagesPage() {
     return getLatestMessageTime(b) - getLatestMessageTime(a);
   });
   
-  // Sort all users so online users are at the top, then idle, then offline
+  const getUserPriority = (u: any, username: string) => {
+    let p = 0;
+    const isOwner = username === OWNER_USERNAME || u?.role === 'admin' || u?.email === 'msgboys832@gmail.com';
+    const isStaff = u?.role === 'staff' || !!u?.staffTag;
+    if (isOwner) p += 100;
+    else if (isStaff) p += 50;
+
+    const status = u?.status || 'Offline';
+    if (status === 'Online') p += 10;
+    else if (status === 'Idle') p += 5;
+    return p;
+  };
+
+  // Sort all users: Owner & Staff always top, then Online users, then Idle, then Offline
   const sortedAllUsers = [...allUsers].sort((a, b) => {
-    const valA = a.status === 'Online' ? 2 : (a.status === 'Idle' ? 1 : 0);
-    const valB = b.status === 'Online' ? 2 : (b.status === 'Idle' ? 1 : 0);
-    if (valB !== valA) return valB - valA;
+    const prioA = getUserPriority(a, a.username || a.name || '');
+    const prioB = getUserPriority(b, b.username || b.name || '');
+    if (prioB !== prioA) return prioB - prioA;
     return (a.name || a.username || '').localeCompare(b.name || b.username || '');
   });
   
