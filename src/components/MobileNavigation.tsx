@@ -101,6 +101,35 @@ export default function MobileNavigation() {
           </Link>
 
           <div className="mobile-emerald-actions">
+            {session ? (
+              <Link href="/profile" style={{ display: "flex", alignItems: "center" }}>
+                <img
+                  src={session.user?.image || "/images/default-avatar.png"}
+                  alt="Profile"
+                  style={{ width: "36px", height: "36px", borderRadius: "50%", border: "2px solid #10B981", objectFit: "cover" }}
+                />
+              </Link>
+            ) : (
+              <a
+                href="/login"
+                style={{
+                  background: "#F0FDF4",
+                  border: "1.5px solid rgba(16, 185, 129, 0.4)",
+                  color: "#064E3B",
+                  padding: "7px 12px",
+                  borderRadius: "9999px",
+                  fontSize: "0.8rem",
+                  fontWeight: 800,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  textDecoration: "none"
+                }}
+              >
+                <i className="fa-solid fa-user"></i>
+                <span>SIGN IN</span>
+              </a>
+            )}
             <a
               href="https://store.pokefun.in"
               target="_blank"
