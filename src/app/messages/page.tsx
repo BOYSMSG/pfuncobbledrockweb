@@ -23,6 +23,9 @@ export default function MessagesPage() {
 
   const OWNER_USERNAME = "boysmsg01"; // Or whatever the admin username is
 
+  const activeContactRef = useRef<string | null>(null);
+  activeContactRef.current = activeContact;
+
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/login');
@@ -40,20 +43,52 @@ export default function MessagesPage() {
         (window as any).__activeChatContact = userToSelect;
       }
       
-      // Instant fetch when a push notification arrives
-      const handleNewMessage = () => fetchMessages();
-      window.addEventListener('newMessageReceived', handleNewMessage);
+      // Instant fetch when push notification arrives, tab gains focus, or visibility changes
+      const handleTrigger = () => fetchMessages();
+      window.addEventListener('newMessageReceived', handleTrigger);
+      window.addEventListener('focus', handleTrigger);
       
-      // Fallback polling (slower to save server resources)
-      const interval = setInterval(() => {
-        if (typeof document !== 'undefined' && !document.hidden) {
+      const handleVisibilityChange = () => {
+        if (typeof document !== 'undefined' && document.visibilityState === 'visible') {
           fetchMessages();
         }
-      }, 30000);
+      };
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      
+      // Cross-tab broadcast listener for 0ms lag between multiple windows/tabs
+      let bc: BroadcastChannel | null = null;
+      if (typeof window !== 'undefined' && 'BroadcastChannel' in window) {
+        try {
+          bc = new BroadcastChannel('pokefun_chat');
+          bc.onmessage = (event) => {
+            if (event.data?.type === 'CHAT_UPDATE') {
+              fetchMessages();
+            }
+          };
+        } catch (e) {}
+      }
+
+      // Fast active polling (1500ms / 1.5s) when window is in foreground (like Instagram/WhatsApp)
+      const interval = setInterval(() => {
+        if (typeof document !== 'undefined' && document.visibilityState === 'visible') {
+          fetchMessages();
+        }
+      }, 1500);
+
+      // Background slower polling (6000ms) when tab is minimized or inactive
+      const bgInterval = setInterval(() => {
+        if (typeof document !== 'undefined' && document.visibilityState !== 'visible') {
+          fetchMessages();
+        }
+      }, 6000);
       
       return () => {
         clearInterval(interval);
-        window.removeEventListener('newMessageReceived', handleNewMessage);
+        clearInterval(bgInterval);
+        window.removeEventListener('newMessageReceived', handleTrigger);
+        window.removeEventListener('focus', handleTrigger);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+        if (bc) bc.close();
       };
     }
   }, [session, status]);
@@ -66,7 +101,7 @@ export default function MessagesPage() {
           let newMessages = data.messages || [];
           
           // Auto-read messages from active contact
-          const currentActiveContact = (window as any).__activeChatContact || activeContact;
+          const currentActiveContact = activeContactRef.current || (window as any).__activeChatContact;
           if (currentActiveContact && data.myUsername) {
             const hasUnread = newMessages.some((m: any) => m.senderId === currentActiveContact && m.receiverId === data.myUsername && !m.read);
             if (hasUnread) {
@@ -81,7 +116,15 @@ export default function MessagesPage() {
             }
           }
           
-          setMessages(newMessages);
+          // Preserve optimistic temp messages that are pending API completion
+          setMessages(prev => {
+            const pendingTemps = prev.filter((m: any) => 
+              typeof m._id === 'string' && 
+              m._id.startsWith('temp_') && 
+              !newMessages.some((nm: any) => nm.content === m.content && nm.senderId === m.senderId)
+            );
+            return [...newMessages, ...pendingTemps];
+          });
           setContacts(data.contacts || {});
           if (data.myUsername) setMyUsername(data.myUsername);
         }
@@ -111,17 +154,20 @@ export default function MessagesPage() {
     e.preventDefault();
     if (!newMessage.trim() || !activeContact) return;
 
-    const content = newMessage;
+    const content = newMessage.trim();
     setNewMessage("");
 
+    const tempId = 'temp_' + Date.now().toString();
     const tempMsg = {
-      _id: Date.now().toString(),
+      _id: tempId,
       senderId: myUsername || session?.user?.name,
       receiverId: activeContact,
       content,
       createdAt: new Date().toISOString()
     };
-    setMessages([...messages, tempMsg]);
+    
+    // Instant optimistic render
+    setMessages(prev => [...prev, tempMsg]);
 
     try {
       const res = await fetch('/api/messages', {
@@ -130,10 +176,20 @@ export default function MessagesPage() {
         body: JSON.stringify({ receiverId: activeContact, content })
       });
       if (!res.ok) throw new Error();
-      fetchMessages(); // Refresh to get actual DB message
+
+      // Broadcast to other open tabs immediately
+      if (typeof window !== 'undefined' && 'BroadcastChannel' in window) {
+        try {
+          const bc = new BroadcastChannel('pokefun_chat');
+          bc.postMessage({ type: 'CHAT_UPDATE', senderId: myUsername, receiverId: activeContact });
+          bc.close();
+        } catch (e) {}
+      }
+
+      fetchMessages(); // Refresh to confirm DB state
     } catch {
       alert("Failed to send message.");
-      setMessages(messages.filter(m => m._id !== tempMsg._id));
+      setMessages(prev => prev.filter(m => m._id !== tempId));
     }
   };
 

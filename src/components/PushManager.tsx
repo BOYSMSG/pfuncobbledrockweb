@@ -155,18 +155,23 @@ export default function PushManager() {
         
         if (data.count !== undefined) {
            const prevCount = parseInt(window.sessionStorage.getItem('lastUnreadCount') || '0');
-           if (data.count > prevCount && localStorage.getItem('muteMsgSound') !== 'true') {
-              // Show Toast popup!
-              if (data.latestMessage) {
-                 toastObj.info(`New Message from @${data.latestMessage.senderId}: ${data.latestMessage.content}`, `/messages?user=${data.latestMessage.senderId}`);
-              }
+           if (data.count > prevCount) {
+              // Trigger instant refresh in messages page
+              window.dispatchEvent(new Event('newMessageReceived'));
 
-              // Play Sound
-              if ((window as any).__activeWidgetWindow !== 'messages' && !window.location.pathname.includes('/messages')) {
-                try {
-                  const audio = new Audio('/audio/notification.wav');
-                  audio.play().catch(() => {});
-                } catch(e) {}
+              if (localStorage.getItem('muteMsgSound') !== 'true') {
+                // Show Toast popup!
+                if (data.latestMessage) {
+                   toastObj.info(`New Message from @${data.latestMessage.senderId}: ${data.latestMessage.content}`, `/messages?user=${data.latestMessage.senderId}`);
+                }
+
+                // Play Sound
+                if ((window as any).__activeWidgetWindow !== 'messages' && !window.location.pathname.includes('/messages')) {
+                  try {
+                    const audio = new Audio('/audio/notification.wav');
+                    audio.play().catch(() => {});
+                  } catch(e) {}
+                }
               }
            }
            window.sessionStorage.setItem('lastUnreadCount', data.count.toString());
