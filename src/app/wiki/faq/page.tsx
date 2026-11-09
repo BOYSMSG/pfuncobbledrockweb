@@ -1,11 +1,8 @@
 import React from 'react';
-import SiteHeader from "@/components/SiteHeader";
 
 export default function FAQPage() {
   return (
-    <div className="viewport">
-      <SiteHeader />
-      <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
+    <div>            <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
         <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
           <div className="main-content" style={{ flex: 1, padding: '40px', overflowY: 'auto' }}>
             <div style={{ maxWidth: '900px', margin: '0 auto', color: '#333' }}>
@@ -56,7 +53,7 @@ export default function FAQPage() {
               <ul style={{ marginLeft: '20px', marginTop: '10px' }}>
                 <li>From <strong>Starter Kits</strong> or <strong>Paid Rank Kits</strong>.</li>
                 <li>You can buy one in-game using the <code>/menu</code> command.</li>
-                <li>You can purchase one from our web store at <a href="https://cobbledrock.pokefun.in/store" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline' }}>https://cobbledrock.pokefun.in/store</a>.</li>
+                <li>You can purchase one from our web store at <a href="https://cobblefun.pokefun.in/store" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6', textDecoration: 'underline' }}>https://cobblefun.pokefun.in/store</a>.</li>
               </ul>
             </div>
           </div>
@@ -68,3 +65,4 @@ export default function FAQPage() {
     </div>
   );
 }
+

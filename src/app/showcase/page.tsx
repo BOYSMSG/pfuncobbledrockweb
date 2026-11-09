@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import SiteHeader from "@/components/SiteHeader";
 
 const showcaseImages = [
   "photo_10_2024-12-08_22-28-31.webp",
@@ -129,9 +128,7 @@ export default function ShowcasePage() {
   };
 
   return (
-    <div className="viewport">
-        <SiteHeader />
-
+    <div>
         <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
             <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
                 <div className="inner" style={{ marginTop: '40px', marginBottom: '80px', padding: '0 20px' }}>
@@ -187,7 +184,7 @@ export default function ShowcasePage() {
             <div className="inner" style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", padding: "0 20px" }}>
                 <div className="footer-col" style={{ width: "100%" }}>
                     <div className="left">
-                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleDrock SMP</strong></h1>
+                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleFun SMP</strong></h1>
                         <p style={{ fontSize: "14px", lineHeight: "1.6" }}>
                             We are not affiliated with or endorsed by Mojang AB or Pokemon.<br />
                             Server IP: mcpe.pokefun.in | Port: 19132
@@ -199,3 +196,4 @@ export default function ShowcasePage() {
     </div>
   );
 }
+

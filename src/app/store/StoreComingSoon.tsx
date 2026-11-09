@@ -23,8 +23,7 @@ export default function StoreComingSoon() {
                     <a href="/features">Features</a>
                     <a href="/store" className="active-pill">Shop</a>
                     <a href="/showcase">Showcase</a>
-                    <a href="/team">Team</a>
-                    <a href="https://discord.com/invite/reKPgCBguX" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a href="https://discord.gg/NtE8QBkmwR" target="_blank" rel="noopener noreferrer">Discord</a>
                 </div>
             </div>
             <div className="header-bg" style={{ height: '350px' }}></div>
@@ -43,7 +42,7 @@ export default function StoreComingSoon() {
                             <li className="nav-features"><a href="/features">Features</a></li>
                             <li className="nav-shop nav-current"><a href="/store">Shop</a></li>
                             <li className="nav-showcase"><a href="/showcase">Showcase</a></li>
-                            <li className="nav-team"><a href="/team">Team</a></li>
+                            <li className="nav-team"></li>
                         </ul>
                     </div>
                 </nav>
@@ -67,10 +66,10 @@ export default function StoreComingSoon() {
                             Store Coming Soon!
                         </h1>
                         <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#059669', marginBottom: '20px' }}>
-                            Support CobbleDrock SMP Pokefun - Donation Shop Coming Soon
+                            Support CobbleFun SMP Pokefun - Donation Shop Coming Soon
                         </h2>
                         <p style={{ fontSize: '20px', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.8' }}>
-                            Ranks, Pokémon, Server Real Cash, GachaMon v1.3.6 perks, Daycare system support, and many more coming soon...
+                            Ranks, Pokemon, Server Real Cash, GachaMon v1.3.6 perks, Daycare system support, and many more coming soon...
                         </p>
                         <a href="/" style={{ display: 'inline-block', marginTop: '40px', padding: '15px 40px', backgroundColor: '#059669', color: '#fff', fontSize: '18px', fontWeight: 'bold', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 5px 15px rgba(14,165,233,0.3)' }}>
                             Return to Home
@@ -84,7 +83,7 @@ export default function StoreComingSoon() {
             <div className="inner" style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", padding: "0 20px" }}>
                 <div className="footer-col" style={{ width: "100%" }}>
                     <div className="left">
-                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleDrock SMP</strong></h1>
+                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleFun SMP</strong></h1>
                         <p style={{ fontSize: "14px", lineHeight: "1.6" }}>
                             We are not affiliated with or endorsed by Mojang AB or Pokemon.<br />
                             Server IP: mcpe.pokefun.in | Port: 19132
@@ -96,3 +95,4 @@ export default function StoreComingSoon() {
     </div>
   );
 }
+

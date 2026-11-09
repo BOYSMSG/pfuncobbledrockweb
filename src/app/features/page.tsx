@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import SiteHeader from "@/components/SiteHeader";
 
 const newFeatures = [
     {
@@ -11,17 +10,17 @@ const newFeatures = [
     },
     {
       title: "Fun & Casino Games",
-      desc: "Need a break from training? Head over to our vibrant Casino to try your luck with exciting mini-games! Bet your Pokécoins, interact with our interactive NPC dealers, and win massive payouts or rare prizes if you hit the jackpot.",
+      desc: "Need a break from training? Head over to our vibrant Casino to try your luck with exciting mini-games! Bet your Pokecoins, interact with our interactive NPC dealers, and win massive payouts or rare prizes if you hit the jackpot.",
       image: "/images/features/funandcasiongames.png"
     },
     {
       title: "Server Crates",
-      desc: "Unlock incredible rewards with our custom server crates! Participate in events, vote for the server, or conquer dungeons to earn Crate Keys. Spin to win legendary items, rare shiny Pokémon, and exclusive cosmetics that will make you stand out.",
+      desc: "Unlock incredible rewards with our custom server crates! Participate in events, vote for the server, or conquer dungeons to earn Crate Keys. Spin to win legendary items, rare shiny Pokemon, and exclusive cosmetics that will make you stand out.",
       image: "/images/features/crates.png"
     },
     {
       title: "Global Trade System (GTS)",
-      desc: "Trade your Pokémon and items with players across the entire server! List your Pokémon for a specific price or search for that rare shiny you've been looking for. The GTS makes economy and trading safe and easy.",
+      desc: "Trade your Pokemon and items with players across the entire server! List your Pokemon for a specific price or search for that rare shiny you've been looking for. The GTS makes economy and trading safe and easy.",
       image: "/images/features/gts.png"
     },
     {
@@ -53,7 +52,7 @@ const newFeatures = [
     },
     {
       title: "Server Menu & Essentials",
-      desc: "Access the intuitive server menu for essential features! Manage your Warps, Claims, Bounties, Jobs, and Bank. Plus, easily check your Stats, redeem Codes, run Commands, visit the Pokéfun Shop, and manage your Homes.",
+      desc: "Access the intuitive server menu for essential features! Manage your Warps, Claims, Bounties, Jobs, and Bank. Plus, easily check your Stats, redeem Codes, run Commands, visit the Pokefun Shop, and manage your Homes.",
       images: [
         "/images/features/servermenuessntialsandotherfeturs1.png", 
         "/images/features/servermenuessntialsandotherfeturs2.png"
@@ -61,12 +60,12 @@ const newFeatures = [
     },
     {
       title: "Special Machines",
-      desc: "Take your gameplay to the next level by utilizing our variety of special custom machines. Craft powerful unique items, automate your resource gathering, and train your Pokémon's abilities faster than ever before with state-of-the-art tech!",
+      desc: "Take your gameplay to the next level by utilizing our variety of special custom machines. Craft powerful unique items, automate your resource gathering, and train your Pokemon's abilities faster than ever before with state-of-the-art tech!",
       image: "/images/features/specialmachines.png"
     },
     {
       title: "Trading & TM Machine",
-      desc: "Engage in a robust player economy! Trade Pokémon safely with other trainers using our secure trade menus to complete your Pokédex. Additionally, use specialized TM Machines to teach your Pokémon powerful new moves to optimize them for competitive battles.",
+      desc: "Engage in a robust player economy! Trade Pokemon safely with other trainers using our secure trade menus to complete your Pokedex. Additionally, use specialized TM Machines to teach your Pokemon powerful new moves to optimize them for competitive battles.",
       image: "/images/features/tradingandtmmachine.png"
     },
     {
@@ -75,8 +74,8 @@ const newFeatures = [
       image: "/images/features/bagpacks.png"
     },
     {
-      title: "The Pokémon Center & Village",
-      desc: "The Pokémon center will be the most important structure of your adventure. It appear in the plains and the desert, there you will find everything you need to improve your gaming experience.",
+      title: "The Pokemon Center & Village",
+      desc: "The Pokemon center will be the most important structure of your adventure. It appear in the plains and the desert, there you will find everything you need to improve your gaming experience.",
       image: "/images/features/thepokecenterandvillage.png",
     },
     {
@@ -86,27 +85,27 @@ const newFeatures = [
     },
     {
       title: "Start a Battle Anywhere",
-      desc: "You can start a battle throwing your Pokémon (crouching and opening your menu) to a wild Pokémon or approaching a trainer.",
+      desc: "You can start a battle throwing your Pokemon (crouching and opening your menu) to a wild Pokemon or approaching a trainer.",
       images: ["/images/features/youcanstartbattle1.gif", "/images/features/youcanstartbattle2.gif"],
     },
     {
       title: "Basic Interactions",
-      desc: "You can use your Pokédex to test your Pokémon's mount and evolutions. Some Pokémon evolve by item interaction or trading. ALL evolution methods are in the Pokédex, so check it regularly.",
+      desc: "You can use your Pokedex to test your Pokemon's mount and evolutions. Some Pokemon evolve by item interaction or trading. ALL evolution methods are in the Pokedex, so check it regularly.",
       image: "/images/features/basicintraction.png",
     },
     {
       title: "Grazing Functions",
-      desc: "The PC now has a new button that lets you send your Pokémon out to roam around. With this function, your Pokémon will heal a little HP, increase their friendship, and attack nearby monsters! Look for the new \"pasture\" PC box and choose an action between returning it to the party or the PC.",
+      desc: "The PC now has a new button that lets you send your Pokemon out to roam around. With this function, your Pokemon will heal a little HP, increase their friendship, and attack nearby monsters! Look for the new \"pasture\" PC box and choose an action between returning it to the party or the PC.",
       image: "/images/features/pcfeture.gif",
     },
     {
-      title: "Pokéradar & Biome Detector",
-      desc: "The Pokéradar is a new feature that lets you search for Pokémon near you. In addition, the Pokédex now includes a biome detector to help you find specific Pokémon.",
+      title: "Pokeradar & Biome Detector",
+      desc: "The Pokeradar is a new feature that lets you search for Pokemon near you. In addition, the Pokedex now includes a biome detector to help you find specific Pokemon.",
       image: "/images/features/pokeradar.png",
     },
     {
       title: "Berries & Apricorns",
-      desc: "Berry plants will appear in Pokévillages. You can plant new berries with their seeds, there are some recipes you can make with them! Apricorn plants will appear over the world. With its fruit you can create some Pokéballs!",
+      desc: "Berry plants will appear in Pokevillages. You can plant new berries with their seeds, there are some recipes you can make with them! Apricorn plants will appear over the world. With its fruit you can create some Pokeballs!",
       image: "/images/features/berrys.png",
     },
     {
@@ -121,27 +120,27 @@ const newFeatures = [
     },
     {
       title: "Backpacks & Painting",
-      desc: "Now you can use backpacks! They function as a Bundle, but you can wear them in the chestplate slot and it give you armor. You can also paint your Pokédex and Backpack!",
+      desc: "Now you can use backpacks! They function as a Bundle, but you can wear them in the chestplate slot and it give you armor. You can also paint your Pokedex and Backpack!",
       image: "/images/features/paintcolor.jpg",
     },
     {
       title: "GachaMon Machine",
-      desc: "GachaMon machine allowing players to obtain items, Mega Stones, and even random Pokémon through capsule-based rewards with different rarity tiers.",
+      desc: "GachaMon machine allowing players to obtain items, Mega Stones, and even random Pokemon through capsule-based rewards with different rarity tiers.",
       image: "/images/features/gachamon.png",
     },
     {
       title: "Advanced Breeding System",
-      desc: "A new breeding system has been created. With the new Day Care machine, you can store up to 6 Pokémon to breed. You can also add up to 2 other people to bring their Pokémon and create the perfect Pokémon. (To open the menu, you must have the Pokedex in your hand and press the action button.)",
+      desc: "A new breeding system has been created. With the new Day Care machine, you can store up to 6 Pokemon to breed. You can also add up to 2 other people to bring their Pokemon and create the perfect Pokemon. (To open the menu, you must have the Pokedex in your hand and press the action button.)",
       image: "/images/features/daycarebreeding.jpg",
     },
     {
       title: "More Equipables",
-      desc: "Eight new equippable items have been added to Pokémon, along with the Shiny Charm (which increases the chance of encountering Shiny Pokémon both in the Day Care and in the wild when held in your inventory). These items will help train Pokémon's EVs more efficiently (in the Day Care, they will pass on a specific IV from the parent holding the item, and the Everstone will pass on the Pokémon's Nature). The Everstone will prevent the Pokémon from evolving, which is for those who like their Pokémon just as it is.",
+      desc: "Eight new equippable items have been added to Pokemon, along with the Shiny Charm (which increases the chance of encountering Shiny Pokemon both in the Day Care and in the wild when held in your inventory). These items will help train Pokemon's EVs more efficiently (in the Day Care, they will pass on a specific IV from the parent holding the item, and the Everstone will pass on the Pokemon's Nature). The Everstone will prevent the Pokemon from evolving, which is for those who like their Pokemon just as it is.",
       image: "/images/features/moreecupmanets.png",
     },
     {
       title: "Kitchen & Food",
-      desc: "🍳 Kitchen & Food\n🎨 Edible dyes in 16 colors\n(Colors and designs adapted for best viewing with SERP Reworked)",
+      desc: "ðŸ³ Kitchen & Food\nðŸŽ¨ Edible dyes in 16 colors\n(Colors and designs adapted for best viewing with SERP Reworked)",
       image: "/images/features/kichenandfood.png",
     },
     {
@@ -158,9 +157,7 @@ const newFeatures = [
 
 export default function FeaturesPage() {
   return (
-    <div className="viewport">
-        <SiteHeader />
-
+    <div>
         <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
             <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
                 <div className="inner" style={{ marginTop: '40px', marginBottom: '60px', padding: '0 20px' }}>
@@ -228,7 +225,7 @@ export default function FeaturesPage() {
             <div className="inner" style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", padding: "0 20px" }}>
                 <div className="footer-col" style={{ width: "100%" }}>
                     <div className="left">
-                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleDrock SMP</strong></h1>
+                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleFun SMP (Powered by Pokefun)</strong></h1>
                         <p style={{ fontSize: "14px", lineHeight: "1.6" }}>
                             We are not affiliated with or endorsed by Mojang AB or Pokemon.<br />
                             Server IP: mcpe.pokefun.in | Port: 19132
@@ -240,3 +237,4 @@ export default function FeaturesPage() {
     </div>
   );
 }
+

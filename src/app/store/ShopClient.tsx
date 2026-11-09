@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import SiteHeader from "@/components/SiteHeader";
 import SaleBanner from '@/components/SaleBanner';
 import { useRouter } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
 export default function ShopClient({ initialCategories }: { initialCategories: any[] }) {
   // Categories are already processed server-side into virtual subcategories (Pokecoins, Ranks, etc.)
-  // No client-side transformation needed — prevents hydration mismatch.
+  // No client-side transformation needed - prevents hydration mismatch.
   const [categories, setCategories] = useState<any[]>(initialCategories);
   const [activeCategoryId, setActiveCategoryId] = useState<number | string>('home');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -276,9 +275,7 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
   }, [categories, storeConfig]);
 
   return (
-    <div className="viewport">
-        <SiteHeader />
-
+    <div>
             <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
                <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
                   <div className="cobblemon-shop-wrapper" style={{ marginTop: '0px', padding: '40px 20px', margin: '0 auto', maxWidth: '1200px' }}>
@@ -415,13 +412,13 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
               <option value="BRL">BRL (R$)</option>
               <option value="CAD">CAD ($)</option>
               <option value="DKK">DKK (kr)</option>
-              <option value="EUR">EUR (€)</option>
+              <option value="EUR">EUR (EUR)</option>
               <option value="NOK">NOK (kr)</option>
               <option value="NZD">NZD ($)</option>
-              <option value="PLN">PLN (zł)</option>
-              <option value="GBP">GBP (£)</option>
+              <option value="PLN">PLN (zÅ‚)</option>
+              <option value="GBP">GBP (GBP)</option>
               <option value="SEK">SEK (kr)</option>
-              <option value="INR">INR (₹)</option>
+              <option value="INR">INR (INR)</option>
             </select>
           </div>
           
@@ -521,7 +518,7 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
         <div className="shop-main">
           {activeCategoryId === 'home' ? (
             <div className="category-container store-home-container" style={{ padding: '40px', background: '#111', border: '1px solid #222', borderRadius: '12px', color: '#ccc' }}>
-              <h2 style={{ color: 'white', fontSize: '3rem', marginBottom: '20px', textAlign: 'center', fontWeight: '800' }}>WELCOME TO THE OFFICIAL <br/><span style={{color: '#4bc8c8'}}>COBBLEDROCK STORE</span></h2>
+              <h2 style={{ color: 'white', fontSize: '3rem', marginBottom: '20px', textAlign: 'center', fontWeight: '800' }}>WELCOME TO THE OFFICIAL <br/><span style={{color: '#4bc8c8'}}>COBBLEFUN STORE</span></h2>
               
               {storeConfig?.saleActive && (
                 <SaleBanner 
@@ -532,8 +529,8 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
               )}
 
               <div style={{ fontSize: '1.1rem', lineHeight: '1.8', whiteSpace: 'pre-wrap' }}>
-                <p><strong>COBBLEDROCK SMP</strong> is a free-to-play Minecraft Bedrock / MCPE Pokémon server powered by the SERP CobbleDrock Addon.</p>
-                <p>Purchase items from our official store to enhance your Pokémon adventure, unlock exclusive perks, get powerful rewards, customize your experience, and support the continued development of CobbleDrock SMP!</p>
+                <p><strong>COBBLEFUN SMP</strong> is a free-to-play Minecraft Bedrock / MCPE Pokemon server powered by the SERP CobbleFun Addon.</p>
+                <p>Purchase items from our official store to enhance your Pokemon adventure, unlock exclusive perks, get powerful rewards, customize your experience, and support the continued development of CobbleFun SMP!</p>
                 <p>To begin, simply select a category from the sidebar and choose what you want to purchase.</p>
 
                 <div style={{ background: '#271f11', borderLeft: '5px solid #fec771', padding: '20px', margin: '30px 0', color: '#fec771', fontSize: '1.2rem', borderRadius: '4px' }}>
@@ -543,7 +540,7 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
 
                 {featuredPackage && (
                   <>
-                    <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>🔥 FEATURED ITEM 🔥</h3>
+                    <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}> FEATURED ITEM </h3>
                     <div className="package-grid" style={{ padding: 0, border: 'none', background: 'transparent', marginBottom: '30px' }}>
                       <div className="package-card" style={{ maxWidth: '400px', margin: '0 auto', gridColumn: '1 / -1' }}>
                         <div className="pkg-image-wrapper" onClick={() => { setSelectedPkg(featuredPackage); setSelectedImage(featuredPackage.image); setCopied(false); }}>
@@ -575,72 +572,72 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
                   </>
                 )}
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>⭐ COBBLEDROCK SMP FEATURES ⭐</h3>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>COBBLEFUN SMP FEATURES</h3>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>🐾 Pokémon & Exclusive Pokémon</h4>
-                <p>Discover, collect, train, and build your ultimate Pokémon team. Get access to special and exclusive Pokémon available through the server and store.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>Pokemon & Exclusive Pokemon</h4>
+                <p>Discover, collect, train, and build your ultimate Pokemon team. Get access to special and exclusive Pokemon available through the server and store.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>💎 Ranks & Premium Perks</h4>
-                <p>Unlock exclusive ranks with special perks, commands, rewards, kits, and other benefits designed to make your CobbleDrock journey even better.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}> Ranks & Premium Perks</h4>
+                <p>Unlock exclusive ranks with special perks, commands, rewards, kits, and other benefits designed to make your CobbleFun journey even better.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>🎁 Kits & Exclusive Rewards</h4>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>Kits & Exclusive Rewards</h4>
                 <p>Get access to special kits and rewards depending on your rank or purchase. Enjoy valuable items and bonuses to help you progress faster.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>🪙 PokéCoins & In-Game Items</h4>
-                <p>Purchase PokéCoins and other useful in-game items to enhance your gameplay and enjoy everything CobbleDrock has to offer.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}> PokeCoins & In-Game Items</h4>
+                <p>Purchase PokeCoins and other useful in-game items to enhance your gameplay and enjoy everything CobbleFun has to offer.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>🏪 Trading & Economy</h4>
-                <p>Trade with other players, buy and sell items, build your wealth, and become one of the richest Trainers on CobbleDrock SMP.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>Trading & Economy</h4>
+                <p>Trade with other players, buy and sell items, build your wealth, and become one of the richest Trainers on CobbleFun SMP.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>🛡️ Land Protection</h4>
-                <p>Protect your builds, bases, Pokémon, and valuable resources using our land protection systems.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}> Land Protection</h4>
+                <p>Protect your builds, bases, Pokemon, and valuable resources using our land protection systems.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>⚔️ Pokémon Adventure</h4>
-                <p>Explore the world, catch Pokémon, battle other Trainers, build your team, and experience the unique Pokémon gameplay of CobbleDrock SMP.</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}> Pokemon Adventure</h4>
+                <p>Explore the world, catch Pokemon, battle other Trainers, build your team, and experience the unique Pokemon gameplay of CobbleFun SMP.</p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}>✨ More Features Coming Soon</h4>
-                <p>We are constantly working on new systems, Pokémon content, rewards, cosmetics, events, and exciting features to make CobbleDrock SMP even better!</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px' }}> More Features Coming Soon</h4>
+                <p>We are constantly working on new systems, Pokemon content, rewards, cosmetics, events, and exciting features to make CobbleFun SMP even better!</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>💰 SUPPORT COBBLEDROCK SMP</h3>
-                <p>Every purchase you make helps support CobbleDrock SMP and contributes towards:</p>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}> SUPPORT COBBLEFUN SMP</h3>
+                <p>Every purchase you make helps support CobbleFun SMP and contributes towards:</p>
                 <ul>
-                  <li>🖥️ Server hosting and infrastructure</li>
-                  <li>⚙️ Development and new features</li>
-                  <li>🐛 Bug fixes and optimization</li>
-                  <li>🎉 Events and community activities</li>
-                  <li>🆕 New Pokémon and content</li>
-                  <li>❤️ Keeping the server online and improving it for everyone</li>
+                  <li> Server hosting and infrastructure</li>
+                  <li> Development and new features</li>
+                  <li>Bug fixes and optimization</li>
+                  <li> Events and community activities</li>
+                  <li> New Pokemon and content</li>
+                  <li>Keeping the server online and improving it for everyone</li>
                 </ul>
-                <p>Thank you for supporting CobbleDrock SMP!<br/>Your support means a lot to us and helps us continue building a better Pokémon experience for the community.</p>
+                <p>Thank you for supporting CobbleFun SMP!<br/>Your support means a lot to us and helps us continue building a better Pokemon experience for the community.</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>🆘 SUPPORT</h3>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}> SUPPORT</h3>
                 <p>Having an issue with your purchase?<br/>If your package has not been delivered after 20 minutes, please contact our staff through Discord and provide proof of purchase.<br/>For payment issues, missing purchases, or other store-related problems, please open a support ticket on our Discord server.</p>
                 
-                <p><strong>💬 Join Our Discord</strong><br/>Need help, want to report an issue, or simply want to meet the community?<br/>Join our official Discord server and talk with the CobbleDrock SMP community and staff.<br/>
-                Discord: <a href="https://discord.com/invite/NtE8QBkmwR" target="_blank" style={{color: '#4bc8c8'}}>https://discord.com/invite/NtE8QBkmwR</a></p>
+                <p><strong> Join Our Discord</strong><br/>Need help, want to report an issue, or simply want to meet the community?<br/>Join our official Discord server and talk with the CobbleFun SMP community and staff.<br/>
+                Discord: <a href="https://discord.gg/NtE8QBkmwR" target="_blank" style={{color: '#4bc8c8'}}>https://discord.gg/NtE8QBkmwR</a></p>
 
-                <p><strong>📧 CONTACT</strong><br/>For general questions and support:<br/>Email: <a href="mailto:contact@pokefun.in" style={{color: '#4bc8c8'}}>contact@pokefun.in</a><br/>For purchase-related issues, we recommend opening a ticket on our Discord server so our staff can assist you faster.</p>
+                <p><strong> CONTACT</strong><br/>For general questions and support:<br/>Email: <a href="mailto:contact@pokefun.in" style={{color: '#4bc8c8'}}>contact@pokefun.in</a><br/>For purchase-related issues, we recommend opening a ticket on our Discord server so our staff can assist you faster.</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>⚠️ REFUND POLICY</h3>
-                <p>All purchases are final and non-refundable.<br/>By completing a purchase on the CobbleDrock SMP Store, you agree to our store terms and refund policy.<br/>Any attempt to perform an unauthorized chargeback or payment reversal may result in a permanent ban from CobbleDrock SMP, our associated services, and/or our stores.<br/>Payments are processed and secured through Tebex, a trusted platform for gaming communities and online transactions.</p>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>âš ï¸ REFUND POLICY</h3>
+                <p>All purchases are final and non-refundable.<br/>By completing a purchase on the CobbleFun SMP Store, you agree to our store terms and refund policy.<br/>Any attempt to perform an unauthorized chargeback or payment reversal may result in a permanent ban from CobbleFun SMP, our associated services, and/or our stores.<br/>Payments are processed and secured through Tebex, a trusted platform for gaming communities and online transactions.</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>⏱️ PURCHASE DELIVERY</h3>
-                <p>Most purchases are delivered automatically to your Minecraft Bedrock account.<br/>Please allow up to 1–20 minutes for your purchase to appear in-game.<br/>If you have not received your purchase after this period:</p>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>PURCHASE DELIVERY</h3>
+                <p>Most purchases are delivered automatically to your Minecraft Bedrock account.<br/>Please allow up to 1 - 20 minutes for your purchase to appear in-game.<br/>If you have not received your purchase after this period:</p>
                 <ul>
                   <li>Make sure you entered the correct Minecraft Bedrock Gamertag.</li>
                   <li>Restart Minecraft or reconnect to the server.</li>
-                  <li>Check that you are connected to CobbleDrock SMP.</li>
+                  <li>Check that you are connected to CobbleFun SMP.</li>
                 </ul>
                 <p>If the purchase is still missing, open a support ticket on our Discord.<br/>Provide your Tebex purchase receipt/order information so our staff can investigate.</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>🚫 BANS & PURCHASED ITEMS</h3>
-                <p>If you are banned from CobbleDrock SMP for violating our server rules, you may lose access to your purchased perks and items for the duration of your ban.<br/>A server ban does not automatically qualify you for a refund.<br/>All purchases remain subject to our server rules and store policies.</p>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}> BANS & PURCHASED ITEMS</h3>
+                <p>If you are banned from CobbleFun SMP for violating our server rules, you may lose access to your purchased perks and items for the duration of your ban.<br/>A server ban does not automatically qualify you for a refund.<br/>All purchases remain subject to our server rules and store policies.</p>
 
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>❤️ THANK YOU FOR SUPPORTING COBBLEDROCK</h3>
-                <p>Whether you purchase a rank, Pokémon, kit, PokéCoins, or another item from our store, you are directly supporting the future of CobbleDrock SMP.<br/>Thank you for being part of our community and helping us make CobbleDrock SMP bigger, better, and more exciting! 🎉</p>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginTop: '40px', marginBottom: '20px', borderBottom: '2px solid #333', paddingBottom: '10px' }}>THANK YOU FOR SUPPORTING COBBLEFUN</h3>
+                <p>Whether you purchase a rank, Pokemon, kit, PokeCoins, or another item from our store, you are directly supporting the future of CobbleFun SMP.<br/>Thank you for being part of our community and helping us make CobbleFun SMP bigger, better, and more exciting! </p>
                 
-                <h4 style={{ color: '#4bc8c8', marginTop: '20px', textAlign: 'center', fontSize: '1.5rem' }}>🐾 CATCH • TRAIN • BATTLE • BECOME THE BEST</h4>
-                <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Welcome to CobbleDrock SMP — your Pokémon adventure starts here!</p>
+                <h4 style={{ color: '#4bc8c8', marginTop: '20px', textAlign: 'center', fontSize: '1.5rem' }}>CATCH \u2022 TRAIN \u2022 BATTLE \u2022 BECOME THE BEST</h4>
+                <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Welcome to CobbleFun SMP - your Pokemon adventure starts here!</p>
               </div>
             </div>
           ) : (
@@ -779,9 +776,9 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
                 onMouseOver={(e) => { e.currentTarget.style.borderColor = '#4bc8c8'; e.currentTarget.style.transform = 'translateY(-5px)'; }}
                 onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--shop-border)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
-                <img src="/assets/images/logo.png" alt="CobbleDrock" style={{ height: '80px', marginBottom: '15px', objectFit: 'contain' }} />
+                <img src="/assets/images/logo.png" alt="CobbleFun" style={{ height: '80px', marginBottom: '15px', objectFit: 'contain' }} />
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Bedrock / MCPE</h3>
-                <p style={{ color: 'var(--shop-text-muted)', fontSize: '1rem', margin: 0 }}>CobbleDrock SMP Bedrock</p>
+                <p style={{ color: 'var(--shop-text-muted)', fontSize: '1rem', margin: 0 }}>CobbleFun SMP Bedrock</p>
                 <button className="btn-buy" style={{ marginTop: '20px', width: '100%', fontSize: '1rem', background: '#4bc8c8' }}>Stay on Bedrock</button>
               </div>
             </div>
@@ -1306,7 +1303,7 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
             <div className="inner" style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", padding: "0 20px" }}>
                 <div className="footer-col" style={{ width: "100%" }}>
                     <div className="left">
-                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleDrock SMP</strong></h1>
+                        <h1 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>2026 &copy; <strong>CobbleFun SMP</strong></h1>
                         <p style={{ fontSize: "14px", lineHeight: "1.6" }}>
                             We are not affiliated with or endorsed by Mojang AB or Pokemon.<br />
                             Server IP: mcpe.pokefun.in | Port: 19132
@@ -1318,3 +1315,4 @@ export default function ShopClient({ initialCategories }: { initialCategories: a
     </div>
   );
 }
+

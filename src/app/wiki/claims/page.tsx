@@ -1,16 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import SiteHeader from "@/components/SiteHeader";
 
 export default function ProtectionStonesWiki() {
   return (
-    <div className="viewport">
-      <Head>
-        <title>Protection Stones (Land Claim) | COBBLEDROCK POKEFUN</title>
+    <div>      <Head>
+        <title>Protection Stones (Land Claim) | COBBLEFUN POKEFUN</title>
       </Head>
-      <SiteHeader />
-      <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
+            <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
         <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
           <div className="container-wrapper" style={{ padding: '40px 20px', minHeight: '80vh', maxWidth: '1000px', margin: '0 auto' }}>
             
@@ -194,3 +191,4 @@ export default function ProtectionStonesWiki() {
     </div>
   );
 }
+

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" fill="none">
+  <defs>
+    <!-- Soft emissive glow -->
+    <filter id="softEmissive" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Refined gradient for outer energy boundary -->
+    <linearGradient id="pedestalRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C9D8" stop-opacity="0.25" />
+      <stop offset="25%" stop-color="#00E5FF" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="75%" stop-color="#00E5FF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00C9D8" stop-opacity="0.25" />
+    </linearGradient>
+
+    <!-- Subdued radial stage floor light -->
+    <radialGradient id="stageFloor" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.3" />
+      <stop offset="45%" stop-color="#00C9D8" stop-opacity="0.14" />
+      <stop offset="80%" stop-color="#1677FF" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Stage Light -->
+  <ellipse cx="450" cy="195" rx="360" ry="74" fill="url(#stageFloor)" />
+
+  <!-- Outer Luminous Platform Ring -->
+  <ellipse cx="450" cy="195" rx="340" ry="70" stroke="url(#pedestalRim)" stroke-width="3" filter="url(#softEmissive)" opacity="0.9" />
+
+  <!-- Inner Precision Cyber Ring -->
+  <ellipse cx="450" cy="195" rx="275" ry="56" stroke="#00C9D8" stroke-width="1.5" stroke-dasharray="12 6" opacity="0.65" />
+
+  <!-- Core Stage Ring -->
+  <ellipse cx="450" cy="195" rx="190" ry="38" stroke="#00E5FF" stroke-width="1.5" opacity="0.5" />
+
+  <!-- 4 Balanced Compass Nodes (Esports Stage Design) -->
+  <g fill="#FFFFFF" filter="url(#softEmissive)">
+    <circle cx="110" cy="195" r="4.5" fill="#00E5FF" />
+    <circle cx="790" cy="195" r="4.5" fill="#00E5FF" />
+    <circle cx="450" cy="125" r="4" fill="#00E5FF" />
+    <circle cx="450" cy="265" r="4" fill="#00E5FF" />
+  </g>
+</svg>

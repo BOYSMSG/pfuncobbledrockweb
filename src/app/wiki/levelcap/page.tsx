@@ -1,226 +1,167 @@
+"use client";
+
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
-import SiteHeader from "@/components/SiteHeader";
+
+const badgeTiers = [
+  { badges: "0 Badges (Starting)", cap: "Level 15 - 20", status: "Starter Trainer", desc: "Default starting cap. Pokemon above level 20 will disobey." },
+  { badges: "1 - 2 Badges", cap: "Level 25 - 30", status: "Novice Trainer", desc: "Allows medium evolution stages (Charmeleon, Ivysaur, Wartortle)." },
+  { badges: "3 - 5 Badges", cap: "Level 35 - 45", status: "Intermediate Trainer", desc: "Unlocks final evolutions for most standard species." },
+  { badges: "6 - 9 Badges", cap: "Level 50 - 65", status: "Advanced Trainer", desc: "Unlocks Mega Evolution access and competitive tier held items." },
+  { badges: "10 - 14 Badges", cap: "Level 70 - 85", status: "Expert Trainer", desc: "Allows high-level pseudo-legendaries and Battle Tower entry." },
+  { badges: "15 - 17 Badges", cap: "Level 90 - 95", status: "Master Trainer", desc: "Allows high-tier elemental raid den boss captures." },
+  { badges: "18 Badges (All Gyms)", cap: "Level 100 (MAX)", status: "CobbleFun Champion", desc: "Ultimate mastery! All Pokemon obey unconditionally with zero level restrictions." },
+];
 
 export default function LevelCapWiki() {
   return (
-    <div className="viewport">
-      <Head>
-        <title>Gyms & Level Cap | COBBLEDROCK POKEFUN</title>
-      </Head>
-      <SiteHeader />
-      <main id="site-main" className="site-main outer" style={{ background: '#f8fafc', margin: 0, padding: 0 }}>
-        <div className="inner posts" style={{ width: '100%', maxWidth: 'none', padding: 0 }}>
-          <div className="container-wrapper" style={{ padding: '40px 20px', minHeight: '80vh', maxWidth: '1000px', margin: '0 auto' }}>
-            
-            {/* Header Title */}
-            <div style={{ textAlign: 'center', marginBottom: '35px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '65px',
-                height: '65px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #00d2ae, #059669)',
-                color: 'white',
-                fontSize: '28px',
-                marginBottom: '15px',
-                boxShadow: '0 8px 20px rgba(0, 210, 174, 0.35)'
-              }}>
-                <i className="fa-solid fa-compass"></i>
-              </div>
-              <h1 style={{ fontSize: '32px', fontWeight: 900, color: '#1e293b', marginBottom: '10px' }}>
-                Gym Locator & Level Cap Guide
-              </h1>
-              <p style={{ color: '#64748b', fontSize: '18px', maxWidth: '700px', margin: '0 auto' }}>
-                Find Gyms easily using your in-game Locator Bar, defeat leaders, collect badges, and raise your Pokémon level cap!
-              </p>
+    <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "40px 20px" }}>
+      
+      {/* Breadcrumb */}
+      <div style={{ marginBottom: "20px" }}>
+        <Link href="/wiki" style={{ color: "#059669", textDecoration: "none", fontWeight: 700, fontSize: "0.9rem" }}>
+          ← Back to Wiki Overview
+        </Link>
+      </div>
+
+      {/* Header Title */}
+      <div style={{ textAlign: "center", marginBottom: "35px" }}>
+        <div style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "60px",
+          height: "60px",
+          borderRadius: "16px",
+          background: "linear-gradient(135deg, #10B981, #059669)",
+          color: "white",
+          fontSize: "24px",
+          marginBottom: "12px",
+          boxShadow: "0 8px 20px rgba(16, 185, 129, 0.3)"
+        }}>
+          <i className="fa-solid fa-compass"></i>
+        </div>
+        <h1 style={{ fontSize: "2.4rem", fontWeight: 900, color: "#064E3B", marginBottom: "8px" }}>
+          Gym Locator &amp; Level Cap System
+        </h1>
+        <p style={{ color: "#134E4A", fontSize: "1rem", maxWidth: "680px", margin: "0 auto" }}>
+          Track Gyms in real-time with your in-game Locator Bar HUD, defeat leaders, collect badges, and raise your Pokemon level cap!
+        </p>
+      </div>
+
+      {/* KEY FEATURE: THE GYM LOCATOR BAR */}
+      <div style={{
+        background: "linear-gradient(135deg, #022c22 0%, #064e3b 50%, #047857 100%)",
+        color: "white",
+        borderRadius: "20px",
+        padding: "32px 28px",
+        marginBottom: "32px",
+        boxShadow: "0 12px 35px rgba(2, 44, 34, 0.25)"
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
+          <span style={{ background: "#10B981", color: "#022c22", padding: "4px 12px", borderRadius: "12px", fontSize: "11px", fontWeight: 900, textTransform: "uppercase" }}>
+            CobbleFun Bedrock Innovation
+          </span>
+          <span style={{ color: "#a7f3d0", fontSize: "13px" }}>Smart Compass HUD</span>
+        </div>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 900, marginBottom: "12px", color: "#ffffff" }}>
+          How to Find Gyms: Check Your Screen Top HUD!
+        </h2>
+
+        <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#e6fffa", marginBottom: "20px" }}>
+          You never have to guess or get lost searching through infinite biomes! CobbleFun automatically tracks your current gym right on your screen top <strong>Locator Bar</strong>:
+        </p>
+
+        {/* Workflow Steps */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "16px" }}>
+          <div style={{ background: "rgba(255, 255, 255, 0.1)", padding: "18px", borderRadius: "12px", border: "1px solid rgba(16, 185, 129, 0.3)" }}>
+            <div style={{ fontSize: "1rem", fontWeight: 800, color: "#34D399", marginBottom: "6px" }}>
+              <i className="fa-solid fa-location-crosshairs"></i> 1. Targeted Gym Icon
             </div>
+            <p style={{ color: "#d1fae5", fontSize: "0.82rem", lineHeight: 1.5, margin: 0 }}>
+              The HUD displays the specific icon and arrow for the next gym you need to beat (e.g. Rock Gym icon with meters away).
+            </p>
+          </div>
 
-            {/* KEY FEATURE: THE GYM LOCATOR BAR */}
-            <div style={{
-              background: 'linear-gradient(135deg, #022c22 0%, #064e3b 50%, #047857 100%)',
-              color: 'white',
-              borderRadius: '16px',
-              padding: '35px 30px',
-              marginBottom: '30px',
-              boxShadow: '0 12px 35px rgba(2, 44, 34, 0.25)',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
-                  <span style={{ background: '#00d2ae', color: '#022c22', padding: '5px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    CobbleDrock Feature
-                  </span>
-                  <span style={{ color: '#a7f3d0', fontSize: '14px' }}>Smart Navigation HUD</span>
-                </div>
-
-                <h2 style={{ fontSize: '26px', fontWeight: 900, marginBottom: '15px', color: '#ffffff' }}>
-                  🧭 How to Find Gyms: Check Your Locator Bar!
-                </h2>
-
-                <p style={{ fontSize: '16px', lineHeight: 1.8, color: '#e6fffa', marginBottom: '20px' }}>
-                  You never have to get lost searching through endless biomes! On <strong>COBBLEDROCK</strong>, simply keep an eye on your <strong>Locator Bar / Compass HUD</strong> at the top of your screen.
-                </p>
-
-                {/* Locator Bar Workflow Steps */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '15px', marginTop: '20px' }}>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(0, 210, 174, 0.3)', backdropFilter: 'blur(5px)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#00d2ae', marginBottom: '8px' }}>
-                      <i className="fa-solid fa-location-crosshairs"></i> 1. Targeted Gym Icon
-                    </div>
-                    <p style={{ color: '#d1fae5', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                      The locator bar always shows the icon of the gym you currently need to battle. For example, if you haven&apos;t defeated the <strong>Rock Gym</strong> yet, it will display the <strong>Rock Gym icon</strong> pointing in its exact direction!
-                    </p>
-                  </div>
-
-                  <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(0, 210, 174, 0.3)', backdropFilter: 'blur(5px)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#00d2ae', marginBottom: '8px' }}>
-                      <i className="fa-solid fa-trophy"></i> 2. Battle &amp; Defeat Leader
-                    </div>
-                    <p style={{ color: '#d1fae5', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                      Follow the indicator straight to the Gym building. Challenge the Gym Leader NPC, win the battle, claim your Gym Badge, and unlock your next Pokémon Level Cap tier.
-                    </p>
-                  </div>
-
-                  <div style={{ background: 'rgba(255, 255, 255, 0.1)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(0, 210, 174, 0.3)', backdropFilter: 'blur(5px)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#00d2ae', marginBottom: '8px' }}>
-                      <i className="fa-solid fa-forward-step"></i> 3. Auto-Tracks Next Gym
-                    </div>
-                    <p style={{ color: '#d1fae5', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                      As soon as you defeat the Gym, the locator bar dynamically updates! It automatically acquires and points to the <strong>Next Gym</strong> in your journey step-by-step!
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: '20px', padding: '12px 18px', background: 'rgba(0, 210, 174, 0.15)', borderRadius: '10px', borderLeft: '4px solid #00d2ae', fontSize: '14px', color: '#e6fffa' }}>
-                  <strong>💡 Pro Tip:</strong> Follow the arrow and distance number on the bar — as you get closer to the Gym, the distance will decrease until you arrive at the Gym arena!
-                </div>
-              </div>
+          <div style={{ background: "rgba(255, 255, 255, 0.1)", padding: "18px", borderRadius: "12px", border: "1px solid rgba(16, 185, 129, 0.3)" }}>
+            <div style={{ fontSize: "1rem", fontWeight: 800, color: "#34D399", marginBottom: "6px" }}>
+              <i className="fa-solid fa-trophy"></i> 2. Defeat the Leader
             </div>
+            <p style={{ color: "#d1fae5", fontSize: "0.82rem", lineHeight: 1.5, margin: 0 }}>
+              Approach the Gym arena, challenge the NPC Gym Leader, claim your Gym Badge, and unlock higher level Pokemon obedience.
+            </p>
+          </div>
 
-            {/* Why is my Pokemon not listening */}
-            <div style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '30px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-              marginBottom: '30px'
-            }}>
-              <h2 style={{ fontSize: '22px', fontWeight: 800, color: '#1e293b', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <i className="fa-solid fa-circle-question" style={{ color: '#059669' }}></i> Why is my Pokémon not listening?
-              </h2>
-              <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.8, marginBottom: '15px' }}>
-                If your Pokémon disobeys or does not listen to your battle commands, it means <strong>your current Level Cap is lower than their level</strong>, or they lack bond/friendship with you.
-              </p>
-              <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.8, margin: 0 }}>
-                To make higher-level Pokémon obey, you must progress through the Gyms using your locator bar, defeat leaders, and earn Gym Badges. Each badge increases your maximum allowed Pokémon level!
-              </p>
+          <div style={{ background: "rgba(255, 255, 255, 0.1)", padding: "18px", borderRadius: "12px", border: "1px solid rgba(16, 185, 129, 0.3)" }}>
+            <div style={{ fontSize: "1rem", fontWeight: 800, color: "#34D399", marginBottom: "6px" }}>
+              <i className="fa-solid fa-forward-step"></i> 3. Auto-Switches Next Gym
             </div>
-
-            {/* Server Progression & Formula */}
-            <div style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '30px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-              marginBottom: '30px'
-            }}>
-              <h2 style={{ fontSize: '22px', fontWeight: 800, color: '#1e293b', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <i className="fa-solid fa-chart-line" style={{ color: '#059669' }}></i> Progression &amp; Level Cap Formula
-              </h2>
-              
-              <div style={{ background: '#f0fdf4', padding: '16px', borderRadius: '10px', borderLeft: '4px solid #059669', marginBottom: '20px' }}>
-                <strong style={{ color: '#166534' }}>Level Cap Formula:</strong> <code style={{ background: '#dcfce7', padding: '3px 8px', borderRadius: '4px', color: '#15803d', fontWeight: 'bold' }}>floor(15 + (85 ÷ 18 × Badges))</code>
-                <div style={{ marginTop: '8px', color: '#166534', fontSize: '14px' }}>
-                  The server features <strong>18 progression stages</strong> scaling smoothly up to the ultimate <strong>Lv. 100</strong> cap.
-                </div>
-              </div>
-
-              {/* Badges Table */}
-              <div style={{ overflowX: 'auto', marginTop: '20px' }}>
-                <table style={{ minWidth: '350px', width: '100%', borderCollapse: 'collapse', textAlign: 'center', color: '#333' }}>
-                  <thead>
-                    <tr style={{ background: '#f1f5f9' }}>
-                      <th style={{ padding: '12px 16px', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 700 }}>Badges Defeated</th>
-                      <th style={{ padding: '12px 16px', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 700 }}>Pokémon Level Cap</th>
-                      <th style={{ padding: '12px 16px', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 700 }}>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>0 (Start)</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 15</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#059669', fontWeight: 'bold' }}>Starter Tier</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>1 Badge</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 19</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Early Game</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>2 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 24</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Early Game</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>3 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 29</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Mid Game</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>4 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 33</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Mid Game</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>6 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 43</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Mid Game</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>8 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 52</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#0284c7', fontWeight: 'bold' }}>Veteran Trainer</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>10 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 62</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Advanced</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>12 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 71</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#64748b' }}>Advanced</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>14 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 81</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#7c3aed', fontWeight: 'bold' }}>Elite Tier</td></tr>
-                    <tr><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}>16 Badges</td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0' }}><strong>Lv. 90</strong></td><td style={{ padding: '10px', borderBottom: '1px solid #e2e8f0', color: '#7c3aed', fontWeight: 'bold' }}>Master Tier</td></tr>
-                    <tr style={{ background: '#f0fdf4' }}><td style={{ padding: '12px', borderBottom: '1px solid #e2e8f0', fontWeight: 'bold' }}>18 Badges (All)</td><td style={{ padding: '12px', borderBottom: '1px solid #e2e8f0', color: '#059669', fontSize: '18px', fontWeight: 900 }}>Lv. 100</td><td style={{ padding: '12px', borderBottom: '1px solid #e2e8f0', color: '#059669', fontWeight: 'bold' }}>Champion</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Loop Summary */}
-            <div style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '25px',
-              border: '1px solid #e2e8f0',
-              textAlign: 'center',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-              marginBottom: '30px'
-            }}>
-              <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#1e293b', marginBottom: '12px' }}>
-                🔥 The CobbleDrock Journey Loop
-              </h3>
-              <div style={{
-                display: 'inline-block',
-                background: '#f8fafc',
-                border: '1px solid #e2e8f0',
-                borderRadius: '12px',
-                padding: '12px 24px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                color: '#059669'
-              }}>
-                Locator Bar → Target Gym → Defeat Leader → Higher Cap → Auto-Track Next Gym!
-              </div>
-              <p style={{ color: '#64748b', fontSize: '14px', marginTop: '12px', marginBottom: 0 }}>
-                This creates fair, exciting progression where every trainer earns their strength step by step!
-              </p>
-            </div>
-
-            {/* Back Button */}
-            <div style={{ textAlign: 'center', marginTop: '20px' }}>
-              <Link href="/wiki" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                background: '#e2e8f0',
-                color: '#334155',
-                padding: '10px 20px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                transition: 'all 0.2s'
-              }}>
-                <i className="fa-solid fa-arrow-left"></i> Back to Wiki
-              </Link>
-            </div>
-
+            <p style={{ color: "#d1fae5", fontSize: "0.82rem", lineHeight: 1.5, margin: 0 }}>
+              Defeating the leader immediately re-targets the HUD compass to point toward the subsequent Gym on your journey!
+            </p>
           </div>
         </div>
-      </main>
+      </div>
+
+      {/* Why is my Pokemon not listening */}
+      <div style={{
+        background: "white",
+        borderRadius: "18px",
+        padding: "26px",
+        border: "1.5px solid rgba(16, 185, 129, 0.25)",
+        boxShadow: "0 8px 24px rgba(6, 78, 59, 0.05)",
+        marginBottom: "32px"
+      }}>
+        <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", marginBottom: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
+          <i className="fa-solid fa-circle-question" style={{ color: "#10B981" }}></i>
+          <span>Why is my Pokemon not listening in battle?</span>
+        </h2>
+        <p style={{ color: "#134E4A", fontSize: "0.9rem", lineHeight: 1.7, margin: "0 0 10px 0" }}>
+          If your Pokemon falls asleep, disobeys orders, or hurts itself in confusion, it means <strong>its current level exceeds your server Level Cap</strong>!
+        </p>
+        <p style={{ color: "#134E4A", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+          To fix this, defeat the next Gym displayed on your Locator Bar. Alternatively, feed your Pokemon a <strong>Common Candy</strong> from <code>/shop</code> to de-level it by 1 level so it obeys commands again!
+        </p>
+      </div>
+
+      {/* Progression Table */}
+      <div style={{
+        background: "white",
+        borderRadius: "18px",
+        padding: "26px",
+        border: "1.5px solid rgba(16, 185, 129, 0.25)",
+        boxShadow: "0 8px 24px rgba(6, 78, 59, 0.05)"
+      }}>
+        <h2 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#064E3B", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+          <i className="fa-solid fa-chart-line" style={{ color: "#10B981" }}></i>
+          <span>18-Stage Level Cap Progression Table</span>
+        </h2>
+
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "0.88rem" }}>
+            <thead>
+              <tr style={{ background: "#F0FDF4", borderBottom: "2px solid rgba(16, 185, 129, 0.3)" }}>
+                <th style={{ padding: "12px 14px", color: "#064E3B", fontWeight: 800 }}>Gym Badges Earned</th>
+                <th style={{ padding: "12px 14px", color: "#064E3B", fontWeight: 800 }}>Max Obedience Level Cap</th>
+                <th style={{ padding: "12px 14px", color: "#064E3B", fontWeight: 800 }}>Trainer Rank Tier</th>
+                <th style={{ padding: "12px 14px", color: "#064E3B", fontWeight: 800 }}>Unlocked Perks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {badgeTiers.map((tier, idx) => (
+                <tr key={idx} style={{ borderBottom: "1px solid rgba(16, 185, 129, 0.15)" }}>
+                  <td style={{ padding: "12px 14px", fontWeight: 700, color: "#064E3B" }}>{tier.badges}</td>
+                  <td style={{ padding: "12px 14px", fontWeight: 800, color: "#059669" }}>{tier.cap}</td>
+                  <td style={{ padding: "12px 14px", color: "#134E4A" }}>{tier.status}</td>
+                  <td style={{ padding: "12px 14px", color: "#64748B", fontSize: "0.82rem" }}>{tier.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   );
 }

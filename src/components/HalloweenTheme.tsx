@@ -242,12 +242,12 @@ export default function HalloweenTheme() {
   const soundFX = useRef<HorrorSoundFX | null>(null);
 
   const horrorQuotes = [
-    "🎃 THE COBBLEDROCK HAUNTING HAS BEGUN...",
-    "👻 Gengar & Chandelure have possessed the gyms!",
-    "⚡ A thunderstorm approaches... Beware of ghost spawns!",
-    "🍬 Give candy or prepare for trickery!",
-    "💀 Welcome to the graveyard of fallen trainers!",
-    "🔮 The blood moon rises over CobbleDrock SMP..."
+    "ðŸŽƒ [!] THE COBBLEFUN HAUNTING HAS BEGUN...",
+    "ðŸ‘» Gengar & Chandelure have possessed the gyms!",
+    "A thunderstorm approaches... Beware of ghost spawns!",
+    "ðŸ¬ Give candy or prepare for trickery!",
+    "ðŸ’€ Welcome to the graveyard of fallen trainers!",
+    "ðŸ”® The blood moon rises over CobbleFun SMP..."
   ];
 
   useEffect(() => {
@@ -478,10 +478,10 @@ export default function HalloweenTheme() {
           {/* 3. Flying Bats Crossing the Top Screen */}
           <div className="horror-bat-swarm" style={{ top: "14%" }}>
             <div style={{ display: "flex", gap: "28px", alignItems: "center" }}>
-              <span style={{ fontSize: "32px", display: "inline-block", transform: "scaleX(-1)", filter: "drop-shadow(0 0 6px rgba(0,0,0,0.8))" }}>🦇</span>
-              <span style={{ fontSize: "22px", display: "inline-block", transform: "scaleX(-1) translateY(-14px)" }}>🦇</span>
-              <span style={{ fontSize: "26px", display: "inline-block", transform: "scaleX(-1) translateY(12px)" }}>🦇</span>
-              <span style={{ fontSize: "18px", display: "inline-block", transform: "scaleX(-1) translateY(-6px)" }}>🦇</span>
+              <span style={{ fontSize: "32px", display: "inline-block", transform: "scaleX(-1)", filter: "drop-shadow(0 0 6px rgba(0,0,0,0.8))" }}>ðŸ¦‡</span>
+              <span style={{ fontSize: "22px", display: "inline-block", transform: "scaleX(-1) translateY(-14px)" }}>ðŸ¦‡</span>
+              <span style={{ fontSize: "26px", display: "inline-block", transform: "scaleX(-1) translateY(12px)" }}>ðŸ¦‡</span>
+              <span style={{ fontSize: "18px", display: "inline-block", transform: "scaleX(-1) translateY(-6px)" }}>ðŸ¦‡</span>
             </div>
           </div>
 
@@ -502,7 +502,7 @@ export default function HalloweenTheme() {
               fontSize: "44px",
               filter: "drop-shadow(0 0 18px rgba(155, 89, 182, 0.9))"
             }}>
-              👻
+              ðŸ‘»
             </div>
           </div>
 
@@ -614,4 +614,5 @@ export function playNavClickSound() {
     osc.stop(now + 0.15);
   } catch (_) {}
 }
+
 

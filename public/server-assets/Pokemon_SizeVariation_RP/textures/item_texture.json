@@ -1,0 +1,21 @@
+{
+  "resource_pack_name": "cobbledrock_size_variation",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "szv_tiny_essence": {
+      "textures": "textures/items/szv/tiny_essence"
+    },
+    "szv_normal_essence": {
+      "textures": "textures/items/szv/normal_essence"
+    },
+    "szv_huge_essence": {
+      "textures": "textures/items/szv/huge_essence"
+    },
+    "szv_shrink_essence": {
+      "textures": "textures/items/szv/shrink_essence"
+    },
+    "szv_growth_essence": {
+      "textures": "textures/items/szv/growth_essence"
+    }
+  }
+}

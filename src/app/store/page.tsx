@@ -2,9 +2,9 @@ import React from 'react';
 import ShopClient from './ShopClient';
 
 export const metadata = {
-  title: 'Store - Pokefun',
-  description: 'Support the Pokefun server by visiting our official store. Ranks, Pokemon, Server Real Cash and many more.',
-  keywords: ["Cobblemon store", "buy Minecraft Pokemon ranks", "Pokefun store", "buy shiny Pokemon Minecraft", "Minecraft server store"],
+  title: 'Official Store - CobbleFun Bedrock | Powered by Pokefun',
+  description: 'Support CobbleFun Bedrock server. Get exclusive Ranks, Crate Keys, Pokecoins, Kits, and RPG perks.',
+  keywords: ["CobbleFun store", "Cobblemon bedrock store", "buy Minecraft Pokemon ranks", "Pokefun store", "MCPE Cobblemon store"],
 };
 
 async function getCategories() {
@@ -25,7 +25,7 @@ async function getCategories() {
 }
 
 /**
- * Process the single "Bedrock CobbleDrock Store" Tebex category into virtual
+ * Process the single "Bedrock CobbleFun Store" Tebex category into virtual
  * subcategories based on package name keywords.
  * This runs SERVER-SIDE so the HTML sent to the client already has the
  * virtual categories — preventing the React hydration mismatch.

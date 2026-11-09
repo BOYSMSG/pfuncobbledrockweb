@@ -2,8 +2,8 @@ import React from 'react';
 import HomeClient from './HomeClient';
 
 export const metadata = {
-  title: 'COBBLEDROCK SMP POKEFUN | Best Minecraft Bedrock Server',
-  description: 'Join the ultimate Minecraft Bedrock server. Explore custom cities, gyms, and a stunning world!',
+  title: 'CobbleFun | Cobblemon Bedrock & MCPE Server | Powered by Pokefun',
+  description: 'Join CobbleFun, powered by Pokefun - the premier Minecraft Bedrock / MCPE Cobblemon Server! Catch, train, and battle on Mobile, Windows & Consoles.',
 };
 
 export default function Page() {

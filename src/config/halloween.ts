@@ -6,8 +6,8 @@
 export const HALLOWEEN_THEME_ACTIVE = false;
 
 export const HALLOWEEN_CONFIG = {
-  eventName: "CobbleDrock Spooky Halloween",
-  tagline: "Happy Halloween! Spooky season is live on CobbleDrock SMP 🎃",
+  eventName: "CobbleFun Spooky Halloween",
+  tagline: "Happy Halloween! Spooky season is live on CobbleFun SMP 🎃",
   pumpkinSoundEnabled: false,
   ambientSoundEnabled: false,
   flyingBatsEnabled: false,
