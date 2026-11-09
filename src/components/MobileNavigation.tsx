@@ -188,6 +188,79 @@ export default function MobileNavigation() {
 
         {/* Navigation Categories */}
         <div className="mobile-drawer-content">
+          {/* User Account / Login Card */}
+          <div style={{
+            padding: "14px 16px",
+            borderRadius: "14px",
+            background: session ? "linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(5, 150, 105, 0.08))" : "#F8FAFC",
+            border: "1.5px solid " + (session ? "rgba(16, 185, 129, 0.3)" : "rgba(0, 0, 0, 0.06)"),
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "12px",
+            marginBottom: "4px"
+          }}>
+            {session ? (
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <img
+                    src={session.user?.image || "/images/default-avatar.png"}
+                    alt="User"
+                    style={{ width: "38px", height: "38px", borderRadius: "50%", objectFit: "cover", border: "2px solid #10B981" }}
+                  />
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: "0.95rem", color: "#064E3B" }}>{session.user?.name}</div>
+                    <div style={{ fontSize: "0.72rem", color: "#059669", fontWeight: 700 }}>Active Member</div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => signOut()}
+                  style={{
+                    background: "#F1F5F9",
+                    border: "none",
+                    borderRadius: "8px",
+                    padding: "6px 10px",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    color: "#64748B",
+                    cursor: "pointer"
+                  }}
+                >
+                  <i className="fa-solid fa-arrow-right-from-bracket" style={{ marginRight: "4px" }}></i>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(16, 185, 129, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "#10B981", fontSize: "1.1rem" }}>
+                    <i className="fa-solid fa-user"></i>
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: "0.92rem", color: "#0F172A" }}>Trainer Account</div>
+                    <div style={{ fontSize: "0.72rem", color: "#64748B" }}>Sign in with Discord / Google</div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => signIn('discord')}
+                  style={{
+                    background: "linear-gradient(135deg, #10B981, #059669)",
+                    color: "#FFFFFF",
+                    border: "none",
+                    borderRadius: "10px",
+                    padding: "8px 14px",
+                    fontSize: "0.82rem",
+                    fontWeight: 800,
+                    cursor: "pointer",
+                    boxShadow: "0 2px 8px rgba(16, 185, 129, 0.3)"
+                  }}
+                >
+                  Login
+                </button>
+              </div>
+            )}
+          </div>
+
           {navCategories.map((category, catIdx) => (
             <div key={catIdx} className="mobile-nav-group">
               <div className="mobile-group-title">{category.name}</div>

@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function AuthWidget() {
-  const { data: session } = useSession();
+  const sessionContext = useSession();
+  const session = sessionContext?.data;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div style={{
+      <div className="desktop-auth-widget" style={{
         position: "fixed",
         top: "20px",
         right: "30px",

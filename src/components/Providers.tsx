@@ -12,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ToastProvider>
         <LanguageProvider>
           {children}
-          <LanguageSettings />
+          {/* <LanguageSettings /> */}
           <HalloweenTheme />
         </LanguageProvider>
       </ToastProvider>
