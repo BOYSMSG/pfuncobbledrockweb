@@ -117,6 +117,60 @@ export default function ProtectionStonesWiki() {
               </div>
             </div>
 
+            {/* Protection Stones Pricing & Area Table */}
+            <div style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '30px',
+              border: '1.5px solid rgba(16, 185, 129, 0.25)',
+              boxShadow: '0 10px 30px rgba(5, 150, 105, 0.06)',
+              marginBottom: '30px'
+            }}>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: '#064E3B', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fa-solid fa-gem" style={{ color: '#059669' }}></i> 🛡️ Protection Stones Tiers &amp; Pricing
+              </h2>
+              <p style={{ color: '#475569', marginBottom: '20px', fontSize: '15px' }}>
+                Protection stones in-game PokéCoins se buy kiye ja sakte hain via <code>/claim</code> ya <code>/protection</code>:
+              </p>
+
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '600px' }}>
+                  <thead>
+                    <tr style={{ background: '#F0FDF4', borderBottom: '2px solid rgba(16, 185, 129, 0.25)' }}>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Stone Tier</th>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Block / Item ID</th>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Cost (PokéCoins)</th>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Claim Area</th>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Radius</th>
+                      <th style={{ padding: '12px 16px', color: '#064E3B', fontWeight: 800 }}>Buy Command</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid rgba(16, 185, 129, 0.12)' }}>
+                      <td style={{ padding: '12px 16px', fontWeight: 800, color: '#06281E' }}>
+                        <i className="fa-solid fa-shield-halved" style={{ color: '#10B981', marginRight: '6px' }}></i> Small Protection Stone
+                      </td>
+                      <td style={{ padding: '12px 16px' }}><code style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', color: '#064E3B', fontWeight: 700 }}>vex:tierone</code></td>
+                      <td style={{ padding: '12px 16px', fontWeight: 800, color: '#059669' }}>250,000 (250k)</td>
+                      <td style={{ padding: '12px 16px', fontWeight: 700 }}>33 × 33 blocks</td>
+                      <td style={{ padding: '12px 16px', color: '#0284C7', fontWeight: 700 }}>16 Blocks</td>
+                      <td style={{ padding: '12px 16px' }}><code>/claim ya /protection</code></td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid rgba(16, 185, 129, 0.12)' }}>
+                      <td style={{ padding: '12px 16px', fontWeight: 800, color: '#06281E' }}>
+                        <i className="fa-solid fa-shield-heart" style={{ color: '#059669', marginRight: '6px' }}></i> Medium Protection Stone
+                      </td>
+                      <td style={{ padding: '12px 16px' }}><code style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', color: '#064E3B', fontWeight: 700 }}>vex:tiertwo</code></td>
+                      <td style={{ padding: '12px 16px', fontWeight: 800, color: '#059669' }}>750,000 (750k)</td>
+                      <td style={{ padding: '12px 16px', fontWeight: 700 }}>65 × 65 blocks</td>
+                      <td style={{ padding: '12px 16px', color: '#0284C7', fontWeight: 700 }}>32 Blocks</td>
+                      <td style={{ padding: '12px 16px' }}><code>/claim ya /protection</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             {/* Useful Commands Table */}
             <div style={{
               background: 'white',

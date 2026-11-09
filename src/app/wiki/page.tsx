@@ -5,6 +5,14 @@ import Link from "next/link";
 
 const wikiPages = [
   {
+    title: "Ranks, Perks & Commands",
+    description: "Complete comparison of all 9 ranks (Trainer to VIP), /fly unlock, cooldowns, portable vaults, land protection stones, and commands cheatsheet.",
+    path: "/wiki/ranks",
+    icon: "fa-crown",
+    badge: "RANKS & PERKS",
+    color: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
+  },
+  {
     title: "Beginner Survival Guide",
     description: "Starter kits, Nurse Joy healers, storage PC boxes, cat backpacks, and essential player commands.",
     path: "/wiki/begginer_guide",

@@ -164,6 +164,7 @@ export default function RootLayout({
                       Knowledgebase
                     </h4>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                      <li><a href="/wiki/ranks" style={{ color: "#059669", textDecoration: "none", fontSize: "0.9rem", fontWeight: 700 }}>⭐ Ranks &amp; Commands Guide</a></li>
                       <li><a href="/wiki/begginer_guide" style={{ color: "#134E4A", textDecoration: "none", fontSize: "0.9rem", fontWeight: 600 }}>Beginner's Guide</a></li>
                       <li><a href="/wiki/kits" style={{ color: "#134E4A", textDecoration: "none", fontSize: "0.9rem", fontWeight: 600 }}>Kits &amp; Ranks Guide</a></li>
                       <li><a href="/wiki/levelcap" style={{ color: "#134E4A", textDecoration: "none", fontSize: "0.9rem", fontWeight: 600 }}>Gyms &amp; Level Cap</a></li>

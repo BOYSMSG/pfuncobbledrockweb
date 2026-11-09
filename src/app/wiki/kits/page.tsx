@@ -201,6 +201,47 @@ export default function KitsWikiPage() {
         </p>
       </div>
 
+      {/* Ranks & Perks Cross-Link Banner */}
+      <div style={{
+        background: "linear-gradient(135deg, #10B981, #059669)",
+        borderRadius: "16px",
+        padding: "20px 24px",
+        color: "#FFFFFF",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: "16px",
+        marginBottom: "36px",
+        boxShadow: "0 8px 24px rgba(16, 185, 129, 0.25)"
+      }}>
+        <div>
+          <h4 style={{ margin: "0 0 4px 0", fontSize: "1.15rem", fontWeight: 800, color: "#FFFFFF" }}>
+            ⭐ Ranks Perks, Limits &amp; Commands Guide
+          </h4>
+          <p style={{ margin: 0, fontSize: "0.9rem", color: "#ECFDF5" }}>
+            Sabhi 9 ranks ke homes, public warps, /fly permissions, cooldowns aur vaults ka live comparison dekhein!
+          </p>
+        </div>
+        <Link
+          href="/wiki/ranks"
+          style={{
+            background: "#FFFFFF",
+            color: "#064E3B",
+            padding: "10px 20px",
+            borderRadius: "10px",
+            textDecoration: "none",
+            fontWeight: 800,
+            fontSize: "0.9rem",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px"
+          }}
+        >
+          View Ranks Perks Guide &rarr;
+        </Link>
+      </div>
+
       {/* Kits List */}
       <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
         {rankKits.map((kit, idx) => (
